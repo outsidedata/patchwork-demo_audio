@@ -1,0 +1,468 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>demo_audio dev</title>
+    <style>
+      body { margin: 0; background: #0b0b0e; display: grid; place-items: center; height: 100vh; overflow: hidden }
+      canvas { grid-area: 1 / 1 }
+      #look {
+        position: fixed; bottom: 10px; left: 10px; padding: 8px 10px;
+        font: 12px/1.45 Menlo, Consolas, monospace; color: #dfe6ee; background: rgba(8, 10, 14, 0.72);
+        border-radius: 4px; pointer-events: none; white-space: pre-wrap
+      }
+      #recordings {
+        position: fixed; top: 10px; left: 10px; width: min(960px, calc(100vw - 300px)); max-height: calc(100vh - 120px);
+        overflow: auto; display: grid; gap: 14px; padding: 12px; background: rgba(8, 10, 14, 0.9); border-radius: 6px;
+        font: 12px/1.45 Menlo, Consolas, monospace; color: #dfe6ee
+      }
+      #recordings[hidden] { display: none }
+      #recordings h3 { margin: 0; font-size: 14px }
+      #recordings canvas { width: 100%; display: block; border-radius: 3px }
+      #recordings audio { width: 100% }
+      #recordings a { color: #ffb066 }
+    </style>
+  </head>
+  <body>
+    <div id="look"></div>
+    <div id="recordings" hidden></div>
+    <script type="module">
+      // The testbed for tuning engines after the bake: the game's manager truth in this tab, stepped on
+      // the page's clock as index.html steps it, and one seat in the lot. Every change below is this
+      // page's alone, made to its own copy of the scene in memory and never written to a file: `copy
+      // JSON` copies what to paste into lot.scene.json (a car's `look.sound`) or into a library species
+      // (its `mix`), and the bake is the library's (`yarn sounds`, `yarn bake demo_audio`).
+      //
+      // At the top right, three's lil-gui:
+      //   car       the car the panel tunes: the one the seat holds while `follow seat` is on, else any
+      //             car picked. Its `mix`: every stem the engine's manifest has, its gain with the throttle
+      //             shut and full, `[shut, full]`; `ease`, the seconds the heard throttle takes to follow;
+      //             `range`, the metres it fades over; and `at`, where on the car it sounds from. Each
+      //             starts at the scene's value, else the manifest's. A change is put into the car's
+      //             `look.sound` when the slider is let go, and box3dvehicle makes every car again from it,
+      //             its loops started afresh.
+      //   bench     the tuned car's engine played straight at the listener, unplaced, as box3dvehicle
+      //             mixes it (its `mix`, exported), at the bench's `rpm` and `throttle`, while `on`; the
+      //             cars are silent while it plays. `sweep` runs it up from idle to its highest layer
+      //             under full throttle over `up` seconds, then back down on the overrun over `down`.
+      //   copy      `look.sound` and `mix` as JSON, to the clipboard.
+      //   recorder  a drive recorded as the game plays it: the seat's car, from where it stands, the pedal
+      //             pushed all the way for `throttle s` and let go for `lift s`, the brake held after, while
+      //             the page's own sound is captured where it leaves for the speakers (audio's volume, the
+      //             last gain before the context's destination), with the car's rpm, throttle, gear and
+      //             speed each frame. With `solo` (on to begin with) every other car is silent while it
+      //             records, so the spectrum is the one engine's. `record every car` records each car
+      //             along the row in turn. Each
+      //             recording is drawn in the recordings panel as its spectrum, 30 hz to 8 khz up a
+      //             logarithmic scale, 70 dB of it from black to white, with the engine's own tone (its
+      //             manifest's `order` times its rpm a second) and that tone's second harmonic traced
+      //             over it, and under it the rpm, the throttle and each change of gear; with a player and
+      //             the capture as a WAV to save. Every recording is on `window.dev.recordings`.
+      //             `record this gun` does the same for the gun the seat holds, every car silent: its
+      //             trigger held for `burst s` and let go, and its echo heard out for `after s`, drawn
+      //             with a tick under the spectrum for each frame it fired, as tall as its rounds, and
+      //             its barrels' spin. `record every gun` records it and each gun after it along the row.
+      // The readout at the bottom left: the car, its rpm, gear and throttle, or the gun, the rounds it
+      // has fired, its aim and its barrels' spin; and whether the page's audio runs (a click or a key
+      // lets it). The panel tunes cars; while the seat holds a gun it keeps to the car it last tuned.
+      const errors = []
+      const caught = e => { errors.push(String(e?.message ?? e)); if (errors.length > 5) errors.shift() }
+      addEventListener('error', e => caught(e.error ?? e.message))
+      addEventListener('unhandledrejection', e => caught(e.reason))
+      const written = console.error.bind(console)
+      console.error = (...a) => { caught(a.map(x => x?.message ?? x).join(' ')); written(...a) }
+      import { boot } from '#engine/engine.ts'
+      import { accept, load, manager, link, view } from '#addons/scenemanager/scenemanager.addon.ts'
+      import { loopback } from '#addons/loopback/loopback.addon.ts'
+      import { holding } from '#plugins/player/player.plugin.ts'
+      import { mix } from '#plugins/box3dvehicle/box3dvehicle.plugin.ts'
+      import GUI from 'lil-gui'
+      import { sim } from './demo_audio.sim.ts'
+      import file from './demo_audio.scene.json'
+      import lot from './lot.scene.json'
+
+      const dt = file.prefabs.engine.dt
+      // The gain that connects straight to a context's destination is audio's volume, the last node
+      // before the speakers: the recorder listens there. The recorder's own silent sink is left out.
+      let master
+      const connect = AudioNode.prototype.connect
+      AudioNode.prototype.connect = function (to, ...rest) {
+        if (to instanceof AudioDestinationNode && this instanceof GainNode && !this.ours) master = this
+        return connect.call(this, to, ...rest)
+      }
+      const truth = boot(file, sim)
+      await load(truth, import.meta.url)
+      let client
+      const page = view(link(loopback(accept(manager(truth)))), file, import.meta.url, (me, scene) => {
+        client = me
+        for (const c of document.querySelectorAll('canvas')) c.remove()
+        for (const surface of [me.plugins.render3d, me.plugins.ui]) {
+          const canvas = document.createElement('canvas')
+          canvas.width = scene.prefabs.engine.width
+          canvas.height = scene.prefabs.engine.height
+          document.body.appendChild(canvas)
+          surface.mount(canvas)
+        }
+      })
+      window.dev = { page, truth, get client() { return client } }
+
+      const fleet = () => client.plugins.wire.scene.world.box3dvehicle.vehicles
+      const names = Object.keys(lot.world.box3dvehicle.vehicles)
+      // The car the seat holds; none while it holds a gun.
+      const held = () => { const it = holding(client?.plugins.wire.rows ?? []); return it?.kind === 'box3dvehicle' ? it : undefined }
+
+      // The car tuned, and its mix as the panel holds it: the scene's sound over its manifest's mix.
+      const state = { follow: true, car: names[1], ease: 0, range: 0, at: [0, 0, 0], stems: {} }
+      const manifestOf = name => client.plugins.loader.get(fleet()[name].look.sound.engine)
+      function read(name) {
+        const sound = fleet()[name].look.sound, m = manifestOf(name)
+        state.car = name
+        state.ease = sound.ease ?? m?.mix?.ease ?? 0
+        state.range = sound.range ?? client.plugins.wire.scene.world.audio.space.max
+        state.at = [...(sound.at ?? [0, 0, 0])]
+        state.stems = Object.fromEntries(Object.entries({ ...m?.mix?.stems, ...sound.stems }).map(([k, v]) => [k, [...v]]))
+      }
+      const sound = () => ({ engine: fleet()[state.car].look.sound.engine, stems: state.stems, ease: state.ease, at: state.at, range: state.range })
+      // The car's look.sound made the panel's, a new object, so box3dvehicle makes every car again.
+      const apply = () => { fleet()[state.car].look = { ...fleet()[state.car].look, sound: structuredClone(sound()) } }
+
+      const gui = new GUI({ title: 'demo_audio dev' })
+      for (const type of ['keydown', 'keyup']) gui.domElement.addEventListener(type, e => e.stopPropagation())
+      let carFolder
+      function panel() {
+        carFolder?.destroy()
+        carFolder = gui.addFolder(`car: ${state.car}`)
+        carFolder.add(state, 'follow').name('follow seat')
+        carFolder.add(state, 'car', names).name('tune car').onChange(n => { state.follow = false; read(n); panel() })
+        carFolder.add(state, 'ease', 0, 0.6, 0.005).onFinishChange(apply)
+        carFolder.add(state, 'range', 5, 600, 1).name('range m').onFinishChange(apply)
+        ;[0, 1, 2].forEach(k => carFolder.add(state.at, k, -3, 3, 0.05).name(`at ${'xyz'[k]}`).onFinishChange(apply))
+        for (const stem of Object.keys(state.stems)) {
+          const f = carFolder.addFolder(`stem ${stem}`)
+          f.add(state.stems[stem], 0, 0, 2, 0.01).name('throttle shut').onFinishChange(apply)
+          f.add(state.stems[stem], 1, 0, 2, 0.01).name('throttle full').onFinishChange(apply)
+        }
+        carFolder.add({ copy: () => navigator.clipboard?.writeText(JSON.stringify(sound(), null, 2)) }, 'copy').name('copy look.sound JSON')
+        carFolder.add({ copy: () => navigator.clipboard?.writeText(JSON.stringify({ mix: { stems: state.stems, ease: state.ease } }, null, 2)) }, 'copy').name('copy species mix JSON')
+      }
+
+      // ---------- the bench ----------
+      const bench = { on: false, rpm: 1000, throttle: 0, up: 4, down: 3, sweeping: false }
+      let voices, stash, sweepAt = 0
+      async function startBench() {
+        const plugins = client.plugins, name = fleet()[state.car].look.sound.engine
+        const m = await plugins.loader.load(name)
+        const files = [...new Set(m.layers.flatMap(l => Object.values(l.stems)))]
+        const buffers = Object.fromEntries(await Promise.all(files.map(async f => [f, await plugins.audio.context.decodeAudioData((await plugins.loader.beside(name, f)).slice(0))])))
+        voices = Object.keys(state.stems).map(stem => {
+          const layers = m.layers.filter(l => l.stems[stem]).map(l => ({ rpm: l.rpm, buffer: buffers[l.stems[stem]] })).sort((a, b) => a.rpm - b.rpm)
+          return { stem, layers, held: layers.map(l => plugins.audio.hold(plugins, l.buffer, { rate: 1, gain: 0 })) }
+        })
+        // The cars silent while the bench plays: every car's sound taken off its look, and put back after.
+        stash = Object.fromEntries(names.map(n => [n, fleet()[n].look.sound]))
+        for (const n of names) { const { sound: _, ...look } = fleet()[n].look; fleet()[n].look = look }
+      }
+      function stopBench() {
+        for (const v of voices ?? []) for (const h of v.held) h.stop()
+        voices = undefined
+        if (stash) for (const n of names) fleet()[n].look = { ...fleet()[n].look, sound: stash[n] }
+        stash = undefined
+        bench.sweeping = false
+      }
+      const benchFolder = gui.addFolder('bench')
+      benchFolder.add(bench, 'on').onChange(v => (v ? startBench() : stopBench()))
+      const rpmCtl = benchFolder.add(bench, 'rpm', 0, 12000, 10)
+      const throttleCtl = benchFolder.add(bench, 'throttle', 0, 1, 0.01)
+      benchFolder.add(bench, 'up', 1, 15, 0.5).name('sweep up s')
+      benchFolder.add(bench, 'down', 1, 15, 0.5).name('sweep down s')
+      benchFolder.add({ sweep: () => { bench.sweeping = true; sweepAt = performance.now() / 1000 } }, 'sweep')
+
+      // ---------- the recorder ----------
+      const rec = { throttle: 9, lift: 4, solo: true, burst: 1.5, after: 5, busy: false }
+      const recordings = []
+      window.dev.recordings = recordings
+      let capture
+      const wait = ms => new Promise(r => setTimeout(r, ms))
+      // The page's sound captured from audio's volume, mono, until `stop`: an AudioWorklet copies every
+      // block on the audio thread and posts it here, so a stall of the page's own thread drops nothing.
+      const TAP = `registerProcessor('tap', class extends AudioWorkletProcessor {
+        process([input]) { if (input[0]) this.port.postMessage(input[0].slice()); return true }
+      })`
+      let tapped
+      async function listen() {
+        const ctx = client.plugins.audio.context
+        tapped ??= ctx.audioWorklet.addModule(URL.createObjectURL(new Blob([TAP], { type: 'text/javascript' })))
+        await tapped
+        const tap = new AudioWorkletNode(ctx, 'tap', { numberOfInputs: 1, numberOfOutputs: 1, channelCount: 1, channelCountMode: 'explicit' })
+        const sink = ctx.createGain()
+        sink.ours = true
+        sink.gain.value = 0
+        const chunks = []
+        tap.port.onmessage = e => chunks.push(e.data)
+        master.connect(tap)
+        tap.connect(sink)
+        sink.connect(ctx.destination)
+        return {
+          rate: ctx.sampleRate,
+          async stop() {
+            master.disconnect(tap)
+            // Blocks already posted are let arrive before the capture is closed.
+            await wait(200)
+            tap.port.onmessage = null
+            tap.disconnect()
+            const pcm = new Float32Array(chunks.reduce((n, c) => n + c.length, 0))
+            let at = 0
+            for (const c of chunks) { pcm.set(c, at); at += c.length }
+            return pcm
+          },
+        }
+      }
+      // The seat's car driven and its sound captured: the pedal all the way for `throttle` seconds, let
+      // go for `lift`, then the brake.
+      async function drive() {
+        const car = held(), name = car.data.vehicle, ctx = client.plugins.audio.context
+        const engine = client.plugins.loader.get(fleet()[name].look.sound.engine)
+        // With `solo`, every other car's sound taken off its look while this one records, and put back after.
+        const kept = rec.solo ? Object.fromEntries(names.filter(n => n !== name).map(n => [n, fleet()[n].look.sound])) : {}
+        for (const n of Object.keys(kept)) { const { sound: _, ...look } = fleet()[n].look; fleet()[n].look = look }
+        if (rec.solo) await wait(800)
+        const player = client.plugins.player, ear = await listen(), t0 = ctx.currentTime, log = []
+        capture = { log, t0 }
+        player.brake(0)
+        await wait(300)
+        player.pedal(1)
+        await wait(rec.throttle * 1000)
+        player.pedal(0)
+        await wait(rec.lift * 1000)
+        player.brake(1)
+        await wait(300)
+        capture = undefined
+        for (const [n, sound] of Object.entries(kept)) fleet()[n].look = { ...fleet()[n].look, sound }
+        const r = { car: name, order: engine.order, redline: lot.world.box3dvehicle.vehicles[name].engine.redline, rate: ear.rate, pcm: await ear.stop(), log }
+        recordings.push(r)
+        show(r)
+      }
+      async function record(every) {
+        if (rec.busy || !master || !held()) return
+        rec.busy = true
+        document.getElementById('recordings').hidden = false
+        try {
+          const n = every ? names.length : 1
+          for (let i = 0; i < n; i++) {
+            await drive()
+            if (every && i < n - 1) { client.plugins.player.next(); await wait(1500) }
+          }
+        } finally { rec.busy = false }
+      }
+
+      // The gun the seat holds, or none.
+      const gunHeld = () => { const it = holding(client?.plugins.wire.rows ?? []); return it?.kind === 'gun' ? it : undefined }
+      // The seat's gun fired and its sound captured, every car silent: the trigger held for `burst`
+      // seconds and let go, and its echo heard out for `after`.
+      async function shoot() {
+        const gun = gunHeld(), ctx = client.plugins.audio.context
+        const kept = Object.fromEntries(names.map(n => [n, fleet()[n].look.sound]))
+        for (const n of names) { const { sound: _, ...look } = fleet()[n].look; fleet()[n].look = look }
+        await wait(800)
+        const player = client.plugins.player, ear = await listen(), t0 = ctx.currentTime, log = []
+        capture = { log, t0, gun: gun.id }
+        await wait(300)
+        player.fire(1)
+        await wait(rec.burst * 1000)
+        player.fire(0)
+        await wait(rec.after * 1000)
+        capture = undefined
+        for (const [n, sound] of Object.entries(kept)) fleet()[n].look = { ...fleet()[n].look, sound }
+        const r = { car: gun.data.gun, rate: ear.rate, pcm: await ear.stop(), log }
+        recordings.push(r)
+        show(r)
+      }
+      // The gun the seat holds recorded; with `every`, each gun after it along the row in turn too, until
+      // the seat walks on to a car.
+      async function fire(every) {
+        if (rec.busy || !master || !gunHeld()) return
+        rec.busy = true
+        document.getElementById('recordings').hidden = false
+        try {
+          do {
+            await shoot()
+            if (!every) break
+            client.plugins.player.next()
+            await wait(1500)
+          } while (gunHeld())
+        } finally { rec.busy = false }
+      }
+
+      // A 16-bit mono WAV of `pcm` at `rate`.
+      function wav(pcm, rate) {
+        const b = new DataView(new ArrayBuffer(44 + pcm.length * 2))
+        const text = (at, s) => [...s].forEach((c, i) => b.setUint8(at + i, c.charCodeAt(0)))
+        text(0, 'RIFF'); b.setUint32(4, 36 + pcm.length * 2, true); text(8, 'WAVEfmt ')
+        b.setUint32(16, 16, true); b.setUint16(20, 1, true); b.setUint16(22, 1, true); b.setUint32(24, rate, true); b.setUint32(28, rate * 2, true); b.setUint16(32, 2, true); b.setUint16(34, 16, true)
+        text(36, 'data'); b.setUint32(40, pcm.length * 2, true)
+        pcm.forEach((v, i) => b.setInt16(44 + 2 * i, Math.round(Math.max(-1, Math.min(1, v)) * 32767), true))
+        return new Blob([b.buffer], { type: 'audio/wav' })
+      }
+      // The magnitudes of the transform of `x` (a power of two long), radix-2 in place.
+      function spectrum(x) {
+        const n = x.length, re = Float64Array.from(x), im = new Float64Array(n)
+        for (let i = 1, j = 0; i < n; i++) {
+          let bit = n >> 1
+          for (; j & bit; bit >>= 1) j ^= bit
+          j ^= bit
+          if (i < j) { [re[i], re[j]] = [re[j], re[i]] }
+        }
+        for (let len = 2; len <= n; len <<= 1) {
+          const a = (-2 * Math.PI) / len, wr = Math.cos(a), wi = Math.sin(a)
+          for (let i = 0; i < n; i += len) {
+            let cr = 1, ci = 0
+            for (let k = 0; k < len / 2; k++) {
+              const ur = re[i + k], ui = im[i + k], vr = re[i + k + len / 2] * cr - im[i + k + len / 2] * ci, vi = re[i + k + len / 2] * ci + im[i + k + len / 2] * cr
+              re[i + k] = ur + vr; im[i + k] = ui + vi; re[i + k + len / 2] = ur - vr; im[i + k + len / 2] = ui - vi
+              const t = cr * wr - ci * wi; ci = cr * wi + ci * wr; cr = t
+            }
+          }
+        }
+        return Float64Array.from({ length: n / 2 }, (_, k) => Math.hypot(re[k], im[k]))
+      }
+      // Black through purple, red and orange to white, for 0 to 1.
+      const heat = v => {
+        const stops = [[0, 0, 0], [60, 10, 110], [190, 30, 60], [250, 140, 30], [255, 255, 220]]
+        const p = Math.max(0, Math.min(1, v)) * (stops.length - 1), i = Math.min(stops.length - 2, Math.floor(p)), f = p - i
+        return stops[i].map((c, k) => c + (stops[i + 1][k] - c) * f)
+      }
+      // The recording drawn: its spectrum with the engine's tone traced over it, and its rpm, throttle and
+      // gears under it; a player; and a link to save it.
+      function show(r) {
+        const W = 1200, H = 420, T = 110, F = 4096, lo = 30, hi = 8000
+        const canvas = document.createElement('canvas')
+        canvas.width = W; canvas.height = H + T
+        const g = canvas.getContext('2d'), image = g.createImageData(W, H)
+        const seconds = r.pcm.length / r.rate, hop = Math.max(1, Math.floor((r.pcm.length - F) / W))
+        const hann = Float64Array.from({ length: F }, (_, i) => 0.5 - 0.5 * Math.cos((2 * Math.PI * i) / F))
+        const yOf = hz => H * (1 - Math.log(hz / lo) / Math.log(hi / lo))
+        const rows = Float64Array.from({ length: H }, (_, y) => lo * Math.pow(hi / lo, 1 - y / H))
+        const columns = []
+        let top = -Infinity
+        for (let x = 0; x < W; x++) {
+          const at = x * hop, frame = Float64Array.from({ length: F }, (_, i) => (r.pcm[at + i] ?? 0) * hann[i])
+          const mag = spectrum(frame), col = new Float64Array(H)
+          for (let y = 0; y < H; y++) {
+            const bin = Math.min(mag.length - 1, Math.round((rows[y] * F) / r.rate))
+            col[y] = 20 * Math.log10(mag[bin] + 1e-9)
+            top = Math.max(top, col[y])
+          }
+          columns.push(col)
+        }
+        columns.forEach((col, x) => col.forEach((db, y) => {
+          const [cr, cg, cb] = heat((db - (top - 70)) / 70), i = 4 * (y * W + x)
+          image.data[i] = cr; image.data[i + 1] = cg; image.data[i + 2] = cb; image.data[i + 3] = 255
+        }))
+        g.putImageData(image, 0, 0)
+        // The frequency scale, and the engine's tone and its second harmonic, from the log.
+        g.font = '11px Menlo, monospace'
+        g.fillStyle = 'rgba(255,255,255,0.75)'
+        for (const hz of [50, 100, 200, 500, 1000, 2000, 5000]) { g.fillRect(0, yOf(hz), 6, 1); g.fillText(`${hz >= 1000 ? `${hz / 1000}k` : hz}`, 8, yOf(hz) + 4) }
+        const tx = t => (t / seconds) * W
+        if (r.order) for (const [k, colour] of [[1, 'rgba(80,220,255,0.9)'], [2, 'rgba(80,220,255,0.45)']]) {
+          g.strokeStyle = colour; g.lineWidth = 1.5; g.beginPath()
+          r.log.forEach((l, i) => { const y = yOf(Math.max(lo, (k * r.order * l.rpm) / 60)); if (i) g.lineTo(tx(l.t), y); else g.moveTo(tx(l.t), y) })
+          g.stroke()
+        }
+        // Under it: the rpm (orange, to the redline), the throttle (green), and each gear as it changes.
+        g.fillStyle = '#111418'; g.fillRect(0, H, W, T)
+        const ty = (v) => H + T - 8 - v * (T - 24)
+        const lines = r.order ? [['rpm', '#ffb066', l => l.rpm / r.redline], ['throttle', '#6fdc8c', l => Math.max(0, l.throttle)]] : [['spin', '#6fdc8c', l => l.spin]]
+        // A gun's rounds: a tick for each frame its count went up, as tall as the rounds it fired since.
+        if (!r.order) {
+          g.fillStyle = '#ffb066'
+          r.log.forEach((l, i) => { if (i && l.fired > r.log[i - 1].fired) g.fillRect(tx(l.t), H + 20, 1, 12 * (l.fired - r.log[i - 1].fired)) })
+        }
+        for (const [field, colour, of] of lines) {
+          g.strokeStyle = colour; g.lineWidth = 1.5; g.beginPath()
+          r.log.forEach((l, i) => { const y = ty(of(l)); if (i) g.lineTo(tx(l.t), y); else g.moveTo(tx(l.t), y) })
+          g.stroke()
+        }
+        g.fillStyle = '#dfe6ee'
+        if (r.order) r.log.forEach((l, i) => { if (!i || l.gear !== r.log[i - 1].gear) g.fillText(`${l.gear}`, tx(l.t) + 2, H + 14) })
+        g.fillStyle = 'rgba(255,255,255,0.6)'
+        for (let s = 1; s < seconds; s++) g.fillRect(tx(s), H, 1, 4)
+        const box = document.createElement('div'), url = URL.createObjectURL(wav(r.pcm, r.rate))
+        const loudest = r.pcm.reduce((m, v) => Math.max(m, Math.abs(v)), 0)
+        if (r.order) {
+          const top3 = Math.round(Math.max(...r.log.map(l => l.rpm))), speed = Math.max(...r.log.map(l => l.speed)) * 3.6
+          box.innerHTML = `<h3>${r.car}: ${seconds.toFixed(1)} s, up to ${top3} rpm and ${speed.toFixed(0)} km/h · tone ${r.order} a turn (blue), rpm (orange), throttle (green), gears</h3>`
+        } else {
+          const rounds = r.log.at(-1).fired - r.log[0].fired
+          box.innerHTML = `<h3>${r.car}: ${seconds.toFixed(1)} s, ${rounds} rounds, loudest sample ${loudest.toFixed(2)} · rounds (orange ticks), barrels' spin (green)</h3>`
+        }
+        box.append(canvas)
+        const audio = document.createElement('audio')
+        audio.controls = true; audio.src = url
+        const save = document.createElement('a')
+        save.href = url; save.download = `${r.car}-drive.wav`; save.textContent = `save ${r.car}-drive.wav`
+        box.append(audio, save)
+        document.getElementById('recordings').append(box)
+      }
+      const recFolder = gui.addFolder('recorder')
+      recFolder.add(rec, 'throttle', 2, 20, 0.5).name('throttle s')
+      recFolder.add(rec, 'lift', 1, 10, 0.5).name('lift s')
+      recFolder.add(rec, 'solo').name('solo: only the car driven heard')
+      recFolder.add({ go: () => record(false) }, 'go').name('record this car')
+      recFolder.add({ go: () => record(true) }, 'go').name('record every car')
+      recFolder.add(rec, 'burst', 0.1, 10, 0.1).name('burst s')
+      recFolder.add(rec, 'after', 0.5, 10, 0.5).name('after s')
+      recFolder.add({ go: () => fire(false) }, 'go').name('record this gun')
+      recFolder.add({ go: () => fire(true) }, 'go').name('record every gun')
+      recFolder.add({ go: () => { const el = document.getElementById('recordings'); el.hidden = !el.hidden } }, 'go').name('show or hide recordings')
+
+      // ---------- the loop ----------
+      const out = document.getElementById('look')
+      let last = performance.now(), owed = 0, tuned
+      const loop = async now => {
+        owed += Math.min((now - last) / 1000, 0.25)
+        last = now
+        try {
+          page.input()
+          while (owed >= dt) { truth.step(dt); owed -= dt }
+          await page.frame(owed / dt)
+        } catch (e) { caught(e) }
+        const car = held()
+        if (capture?.gun) {
+          const g = client.plugins.wire.rows.find(r => r.id === capture.gun)
+          if (g) capture.log.push({ t: client.plugins.audio.context.currentTime - capture.t0, fired: g.data.fired, spin: g.data.spin ?? 0 })
+        } else if (capture && car) {
+          const chassis = client.plugins.wire.rows.find(r => r.id === car.data.chassis)
+          capture.log.push({ t: client.plugins.audio.context.currentTime - capture.t0, rpm: car.data.rpm, throttle: car.data.throttle ?? 0, gear: car.data.gear, speed: Math.hypot(...chassis.data.vel) })
+        }
+        if (client && state.follow && car && car.data.vehicle !== state.car) { read(car.data.vehicle); panel() }
+        if (client && !tuned && manifestOf(state.car)) { tuned = true; read(state.car); panel() }
+        if (voices) {
+          const m = voices[0]?.layers ?? [], lo = m[0]?.rpm ?? 0, hi = m[m.length - 1]?.rpm ?? 0
+          if (bench.sweeping) {
+            const t = now / 1000 - sweepAt
+            if (t < bench.up) { bench.throttle = 1; bench.rpm = lo + (hi - lo) * (t / bench.up) }
+            else if (t < bench.up + bench.down) { bench.throttle = 0; bench.rpm = hi - (hi - lo) * ((t - bench.up) / bench.down) }
+            else bench.sweeping = false
+            rpmCtl.updateDisplay(); throttleCtl.updateDisplay()
+          }
+          for (const v of voices) {
+            const [shut, full] = state.stems[v.stem]
+            mix(v.layers, bench.rpm, shut + (full - shut) * bench.throttle).forEach((l, k) => v.held[k].set(l.rate, l.gain))
+          }
+        }
+        const audio = client?.plugins.audio.context?.state ?? 'none'
+        const gun = holding(client?.plugins.wire.rows ?? [])
+        const lines = [
+          car ? `${car.data.vehicle}  ${Math.round(car.data.rpm)} rpm  gear ${car.data.gear}  throttle ${(Math.max(0, car.data.throttle ?? 0) * 100).toFixed(0)}%`
+            : gun?.kind === 'gun' ? `${gun.data.gun}  ${gun.data.fired} fired  aim ${Math.round(gun.data.reach)} m${gun.data.spin ? `  barrels ${Math.round(gun.data.spin * 100)}%` : ''}` : 'nothing held',
+          `tuning ${state.car}${voices ? `  bench ${Math.round(bench.rpm)} rpm  throttle ${(bench.throttle * 100).toFixed(0)}%` : ''}`,
+          `audio ${audio}${audio !== 'running' ? '  (click the page to let it play)' : ''}`,
+        ]
+        out.textContent = [...lines, ...errors].join('\n')
+        requestAnimationFrame(loop)
+      }
+      requestAnimationFrame(loop)
+    </script>
+  </body>
+</html>

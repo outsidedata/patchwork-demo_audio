@@ -1,0 +1,90 @@
+{
+  "mix": {
+    "near": 4,
+    "far": 300,
+    "choke": [
+      "far",
+      "tail"
+    ],
+    "stems": {
+      "crack": [
+        0.85,
+        0.1
+      ],
+      "body": [
+        1,
+        0.35
+      ],
+      "mech": [
+        0.4,
+        0
+      ],
+      "far": [
+        0.1,
+        1
+      ],
+      "tail": [
+        0.4,
+        0.85
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "chaingun-1-crack.wav",
+      "body": "chaingun-1-body.wav",
+      "mech": "chaingun-1-mech.wav",
+      "far": "chaingun-1-far.wav",
+      "tail": "chaingun-1-tail.wav"
+    },
+    {
+      "crack": "chaingun-2-crack.wav",
+      "body": "chaingun-2-body.wav",
+      "mech": "chaingun-2-mech.wav",
+      "far": "chaingun-2-far.wav",
+      "tail": "chaingun-2-tail.wav"
+    },
+    {
+      "crack": "chaingun-3-crack.wav",
+      "body": "chaingun-3-body.wav",
+      "mech": "chaingun-3-mech.wav",
+      "far": "chaingun-3-far.wav",
+      "tail": "chaingun-3-tail.wav"
+    },
+    {
+      "crack": "chaingun-4-crack.wav",
+      "body": "chaingun-4-body.wav",
+      "mech": "chaingun-4-mech.wav",
+      "far": "chaingun-4-far.wav",
+      "tail": "chaingun-4-tail.wav"
+    },
+    {
+      "crack": "chaingun-5-crack.wav",
+      "body": "chaingun-5-body.wav",
+      "mech": "chaingun-5-mech.wav",
+      "far": "chaingun-5-far.wav",
+      "tail": "chaingun-5-tail.wav"
+    },
+    {
+      "crack": "chaingun-6-crack.wav",
+      "body": "chaingun-6-body.wav",
+      "mech": "chaingun-6-mech.wav",
+      "far": "chaingun-6-far.wav",
+      "tail": "chaingun-6-tail.wav"
+    },
+    {
+      "crack": "chaingun-7-crack.wav",
+      "body": "chaingun-7-body.wav",
+      "mech": "chaingun-7-mech.wav",
+      "far": "chaingun-7-far.wav",
+      "tail": "chaingun-7-tail.wav"
+    },
+    {
+      "crack": "chaingun-8-crack.wav",
+      "body": "chaingun-8-body.wav",
+      "mech": "chaingun-8-mech.wav",
+      "far": "chaingun-8-far.wav",
+      "tail": "chaingun-8-tail.wav"
+    }
+  ]
+}

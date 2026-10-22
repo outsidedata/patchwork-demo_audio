@@ -1,0 +1,52 @@
+{
+  "mix": {
+    "near": 6,
+    "far": 500,
+    "choke": [],
+    "stems": {
+      "crack": [
+        1,
+        0.25
+      ],
+      "body": [
+        1,
+        0.65
+      ],
+      "mech": [
+        0.7,
+        0
+      ],
+      "far": [
+        0.15,
+        1
+      ],
+      "tail": [
+        0.5,
+        1
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "vls-1-crack.wav",
+      "body": "vls-1-body.wav",
+      "mech": "vls-1-mech.wav",
+      "far": "vls-1-far.wav",
+      "tail": "vls-1-tail.wav"
+    },
+    {
+      "crack": "vls-2-crack.wav",
+      "body": "vls-2-body.wav",
+      "mech": "vls-2-mech.wav",
+      "far": "vls-2-far.wav",
+      "tail": "vls-2-tail.wav"
+    },
+    {
+      "crack": "vls-3-crack.wav",
+      "body": "vls-3-body.wav",
+      "mech": "vls-3-mech.wav",
+      "far": "vls-3-far.wav",
+      "tail": "vls-3-tail.wav"
+    }
+  ]
+}

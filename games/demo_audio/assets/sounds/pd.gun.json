@@ -1,0 +1,69 @@
+{
+  "mix": {
+    "near": 4,
+    "far": 300,
+    "choke": [
+      "far",
+      "tail"
+    ],
+    "stems": {
+      "crack": [
+        1,
+        0.12
+      ],
+      "body": [
+        1,
+        0.4
+      ],
+      "mech": [
+        0.5,
+        0
+      ],
+      "far": [
+        0.1,
+        1
+      ],
+      "tail": [
+        0.45,
+        0.9
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "pd-1-crack.wav",
+      "body": "pd-1-body.wav",
+      "mech": "pd-1-mech.wav",
+      "far": "pd-1-far.wav",
+      "tail": "pd-1-tail.wav"
+    },
+    {
+      "crack": "pd-2-crack.wav",
+      "body": "pd-2-body.wav",
+      "mech": "pd-2-mech.wav",
+      "far": "pd-2-far.wav",
+      "tail": "pd-2-tail.wav"
+    },
+    {
+      "crack": "pd-3-crack.wav",
+      "body": "pd-3-body.wav",
+      "mech": "pd-3-mech.wav",
+      "far": "pd-3-far.wav",
+      "tail": "pd-3-tail.wav"
+    },
+    {
+      "crack": "pd-4-crack.wav",
+      "body": "pd-4-body.wav",
+      "mech": "pd-4-mech.wav",
+      "far": "pd-4-far.wav",
+      "tail": "pd-4-tail.wav"
+    },
+    {
+      "crack": "pd-5-crack.wav",
+      "body": "pd-5-body.wav",
+      "mech": "pd-5-mech.wav",
+      "far": "pd-5-far.wav",
+      "tail": "pd-5-tail.wav"
+    }
+  ]
+}

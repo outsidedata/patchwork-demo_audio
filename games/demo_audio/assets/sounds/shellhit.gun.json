@@ -1,0 +1,59 @@
+{
+  "mix": {
+    "near": 6,
+    "far": 400,
+    "choke": [],
+    "stems": {
+      "crack": [
+        1,
+        0.2
+      ],
+      "body": [
+        1,
+        0.55
+      ],
+      "mech": [
+        0.7,
+        0.05
+      ],
+      "far": [
+        0.12,
+        1
+      ],
+      "tail": [
+        0.45,
+        0.9
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "shellhit-1-crack.wav",
+      "body": "shellhit-1-body.wav",
+      "mech": "shellhit-1-mech.wav",
+      "far": "shellhit-1-far.wav",
+      "tail": "shellhit-1-tail.wav"
+    },
+    {
+      "crack": "shellhit-2-crack.wav",
+      "body": "shellhit-2-body.wav",
+      "mech": "shellhit-2-mech.wav",
+      "far": "shellhit-2-far.wav",
+      "tail": "shellhit-2-tail.wav"
+    },
+    {
+      "crack": "shellhit-3-crack.wav",
+      "body": "shellhit-3-body.wav",
+      "mech": "shellhit-3-mech.wav",
+      "far": "shellhit-3-far.wav",
+      "tail": "shellhit-3-tail.wav"
+    },
+    {
+      "crack": "shellhit-4-crack.wav",
+      "body": "shellhit-4-body.wav",
+      "mech": "shellhit-4-mech.wav",
+      "far": "shellhit-4-far.wav",
+      "tail": "shellhit-4-tail.wav"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "mix": {
+    "near": 10,
+    "far": 800,
+    "choke": [],
+    "stems": {
+      "crack": [
+        1,
+        0.25
+      ],
+      "body": [
+        1,
+        0.7
+      ],
+      "mech": [
+        0.8,
+        0.15
+      ],
+      "far": [
+        0.2,
+        1
+      ],
+      "tail": [
+        0.6,
+        1
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "bigblast-1-crack.wav",
+      "body": "bigblast-1-body.wav",
+      "mech": "bigblast-1-mech.wav",
+      "far": "bigblast-1-far.wav",
+      "tail": "bigblast-1-tail.wav"
+    },
+    {
+      "crack": "bigblast-2-crack.wav",
+      "body": "bigblast-2-body.wav",
+      "mech": "bigblast-2-mech.wav",
+      "far": "bigblast-2-far.wav",
+      "tail": "bigblast-2-tail.wav"
+    },
+    {
+      "crack": "bigblast-3-crack.wav",
+      "body": "bigblast-3-body.wav",
+      "mech": "bigblast-3-mech.wav",
+      "far": "bigblast-3-far.wav",
+      "tail": "bigblast-3-tail.wav"
+    }
+  ]
+}

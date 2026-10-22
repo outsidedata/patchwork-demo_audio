@@ -1,0 +1,76 @@
+{
+  "mix": {
+    "near": 4,
+    "far": 260,
+    "choke": [
+      "far",
+      "tail"
+    ],
+    "stems": {
+      "crack": [
+        1,
+        0.12
+      ],
+      "body": [
+        1,
+        0.3
+      ],
+      "mech": [
+        0.55,
+        0
+      ],
+      "far": [
+        0.08,
+        1
+      ],
+      "tail": [
+        0.45,
+        0.9
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "twinmg-1-crack.wav",
+      "body": "twinmg-1-body.wav",
+      "mech": "twinmg-1-mech.wav",
+      "far": "twinmg-1-far.wav",
+      "tail": "twinmg-1-tail.wav"
+    },
+    {
+      "crack": "twinmg-2-crack.wav",
+      "body": "twinmg-2-body.wav",
+      "mech": "twinmg-2-mech.wav",
+      "far": "twinmg-2-far.wav",
+      "tail": "twinmg-2-tail.wav"
+    },
+    {
+      "crack": "twinmg-3-crack.wav",
+      "body": "twinmg-3-body.wav",
+      "mech": "twinmg-3-mech.wav",
+      "far": "twinmg-3-far.wav",
+      "tail": "twinmg-3-tail.wav"
+    },
+    {
+      "crack": "twinmg-4-crack.wav",
+      "body": "twinmg-4-body.wav",
+      "mech": "twinmg-4-mech.wav",
+      "far": "twinmg-4-far.wav",
+      "tail": "twinmg-4-tail.wav"
+    },
+    {
+      "crack": "twinmg-5-crack.wav",
+      "body": "twinmg-5-body.wav",
+      "mech": "twinmg-5-mech.wav",
+      "far": "twinmg-5-far.wav",
+      "tail": "twinmg-5-tail.wav"
+    },
+    {
+      "crack": "twinmg-6-crack.wav",
+      "body": "twinmg-6-body.wav",
+      "mech": "twinmg-6-mech.wav",
+      "far": "twinmg-6-far.wav",
+      "tail": "twinmg-6-tail.wav"
+    }
+  ]
+}

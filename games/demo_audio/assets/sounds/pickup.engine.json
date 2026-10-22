@@ -1,0 +1,80 @@
+{
+  "order": 4,
+  "mix": {
+    "stems": {
+      "on": [
+        0.3,
+        1
+      ],
+      "off": [
+        1,
+        0
+      ],
+      "intake": [
+        0.2,
+        0.7
+      ],
+      "mech": [
+        0.5,
+        0.6
+      ]
+    },
+    "ease": 0.12
+  },
+  "layers": [
+    {
+      "rpm": 650,
+      "stems": {
+        "on": "pickup-650-on.wav",
+        "off": "pickup-650-off.wav",
+        "intake": "pickup-650-intake.wav",
+        "mech": "pickup-650-mech.wav"
+      }
+    },
+    {
+      "rpm": 1000,
+      "stems": {
+        "on": "pickup-1000-on.wav",
+        "off": "pickup-1000-off.wav",
+        "intake": "pickup-1000-intake.wav",
+        "mech": "pickup-1000-mech.wav"
+      }
+    },
+    {
+      "rpm": 1550,
+      "stems": {
+        "on": "pickup-1550-on.wav",
+        "off": "pickup-1550-off.wav",
+        "intake": "pickup-1550-intake.wav",
+        "mech": "pickup-1550-mech.wav"
+      }
+    },
+    {
+      "rpm": 2300,
+      "stems": {
+        "on": "pickup-2300-on.wav",
+        "off": "pickup-2300-off.wav",
+        "intake": "pickup-2300-intake.wav",
+        "mech": "pickup-2300-mech.wav"
+      }
+    },
+    {
+      "rpm": 3100,
+      "stems": {
+        "on": "pickup-3100-on.wav",
+        "off": "pickup-3100-off.wav",
+        "intake": "pickup-3100-intake.wav",
+        "mech": "pickup-3100-mech.wav"
+      }
+    },
+    {
+      "rpm": 4000,
+      "stems": {
+        "on": "pickup-4000-on.wav",
+        "off": "pickup-4000-off.wav",
+        "intake": "pickup-4000-intake.wav",
+        "mech": "pickup-4000-mech.wav"
+      }
+    }
+  ]
+}

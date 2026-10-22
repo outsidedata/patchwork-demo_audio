@@ -1,0 +1,25 @@
+{
+  "paints": {
+    "concrete": {"colour":"#9a968c","roughness":0.92,"metalness":0},
+    "concreteDark": {"colour":"#7c786f","roughness":0.95,"metalness":0},
+    "steel": {"colour":"#4f565c","roughness":0.5,"metalness":0.7},
+    "ring": {"colour":"#2c3034","roughness":0.4,"metalness":0.8},
+    "hazard": {"colour":"#d9a521","roughness":0.55,"metalness":0.2},
+    "trim": {"colour":"#1d2023","roughness":0.7,"metalness":0.2}
+  },
+  "nodes": {
+    "base": {"at":[0,0,0]}
+  },
+  "parts": [
+    {"node":"base","paint":"concreteDark","loft":{"axis":"y","from":0,"to":0.12,"a":[0,0,0.75,0.95]}},
+    {"node":"base","paint":"concrete","loft":{"axis":"y","from":0.12,"to":0.92,"a":[0,0,0.62,0.82],"b":[0,0,0.55,0.74]}},
+    {"node":"base","paint":"concreteDark","loft":{"axis":"y","from":0.92,"to":0.98,"a":[0,0,0.6,0.8]}},
+    {"node":"base","paint":"hazard","loft":{"axis":"y","from":0.2,"to":0.3,"a":[0,0,0.608,0.808],"b":[0,0,0.6,0.8]}},
+    {"node":"base","paint":"trim","loft":{"axis":"y","from":0.3,"to":0.32,"a":[0,0,0.6,0.8],"b":[0,0,0.598,0.798]}},
+    {"node":"base","paint":"steel","prism":{"axis":"y","from":0.98,"to":1.04,"at":[0,0],"r":[0.5,0.48],"sides":16}},
+    {"node":"base","paint":"ring","prism":{"axis":"y","from":1.04,"to":1.1,"at":[0,0],"r":[0.42,0.4],"sides":16}},
+    {"node":"base","paint":"trim","prism":{"axis":"y","from":1.035,"to":1.045,"at":[0,0],"r":[0.505,0.505],"sides":16}},
+    {"node":"base","paint":"steel","loft":{"axis":"y","from":0.98,"to":1.0,"a":[0,0.86,0.12,0.06]}},
+    {"node":"base","paint":"hazard","loft":{"axis":"y","from":1.0,"to":1.005,"a":[0,0.86,0.1,0.04]}}
+  ]
+}

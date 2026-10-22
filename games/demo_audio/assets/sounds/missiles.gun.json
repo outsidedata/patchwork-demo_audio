@@ -1,0 +1,59 @@
+{
+  "mix": {
+    "near": 5,
+    "far": 300,
+    "choke": [],
+    "stems": {
+      "crack": [
+        1,
+        0.2
+      ],
+      "body": [
+        1,
+        0.55
+      ],
+      "mech": [
+        0.6,
+        0
+      ],
+      "far": [
+        0.12,
+        1
+      ],
+      "tail": [
+        0.45,
+        0.9
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "missiles-1-crack.wav",
+      "body": "missiles-1-body.wav",
+      "mech": "missiles-1-mech.wav",
+      "far": "missiles-1-far.wav",
+      "tail": "missiles-1-tail.wav"
+    },
+    {
+      "crack": "missiles-2-crack.wav",
+      "body": "missiles-2-body.wav",
+      "mech": "missiles-2-mech.wav",
+      "far": "missiles-2-far.wav",
+      "tail": "missiles-2-tail.wav"
+    },
+    {
+      "crack": "missiles-3-crack.wav",
+      "body": "missiles-3-body.wav",
+      "mech": "missiles-3-mech.wav",
+      "far": "missiles-3-far.wav",
+      "tail": "missiles-3-tail.wav"
+    },
+    {
+      "crack": "missiles-4-crack.wav",
+      "body": "missiles-4-body.wav",
+      "mech": "missiles-4-mech.wav",
+      "far": "missiles-4-far.wav",
+      "tail": "missiles-4-tail.wav"
+    }
+  ]
+}

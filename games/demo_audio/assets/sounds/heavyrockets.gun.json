@@ -1,0 +1,59 @@
+{
+  "mix": {
+    "near": 6,
+    "far": 400,
+    "choke": [],
+    "stems": {
+      "crack": [
+        1,
+        0.2
+      ],
+      "body": [
+        1,
+        0.6
+      ],
+      "mech": [
+        0.6,
+        0
+      ],
+      "far": [
+        0.15,
+        1
+      ],
+      "tail": [
+        0.5,
+        0.95
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "heavyrockets-1-crack.wav",
+      "body": "heavyrockets-1-body.wav",
+      "mech": "heavyrockets-1-mech.wav",
+      "far": "heavyrockets-1-far.wav",
+      "tail": "heavyrockets-1-tail.wav"
+    },
+    {
+      "crack": "heavyrockets-2-crack.wav",
+      "body": "heavyrockets-2-body.wav",
+      "mech": "heavyrockets-2-mech.wav",
+      "far": "heavyrockets-2-far.wav",
+      "tail": "heavyrockets-2-tail.wav"
+    },
+    {
+      "crack": "heavyrockets-3-crack.wav",
+      "body": "heavyrockets-3-body.wav",
+      "mech": "heavyrockets-3-mech.wav",
+      "far": "heavyrockets-3-far.wav",
+      "tail": "heavyrockets-3-tail.wav"
+    },
+    {
+      "crack": "heavyrockets-4-crack.wav",
+      "body": "heavyrockets-4-body.wav",
+      "mech": "heavyrockets-4-mech.wav",
+      "far": "heavyrockets-4-far.wav",
+      "tail": "heavyrockets-4-tail.wav"
+    }
+  ]
+}

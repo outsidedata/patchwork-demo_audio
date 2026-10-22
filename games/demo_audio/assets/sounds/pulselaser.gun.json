@@ -1,0 +1,68 @@
+{
+  "mix": {
+    "near": 4,
+    "far": 200,
+    "choke": [
+      "tail"
+    ],
+    "stems": {
+      "crack": [
+        1,
+        0.1
+      ],
+      "body": [
+        1,
+        0.4
+      ],
+      "mech": [
+        0.5,
+        0
+      ],
+      "far": [
+        0.1,
+        1
+      ],
+      "tail": [
+        0.4,
+        0.8
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "pulselaser-1-crack.wav",
+      "body": "pulselaser-1-body.wav",
+      "mech": "pulselaser-1-mech.wav",
+      "far": "pulselaser-1-far.wav",
+      "tail": "pulselaser-1-tail.wav"
+    },
+    {
+      "crack": "pulselaser-2-crack.wav",
+      "body": "pulselaser-2-body.wav",
+      "mech": "pulselaser-2-mech.wav",
+      "far": "pulselaser-2-far.wav",
+      "tail": "pulselaser-2-tail.wav"
+    },
+    {
+      "crack": "pulselaser-3-crack.wav",
+      "body": "pulselaser-3-body.wav",
+      "mech": "pulselaser-3-mech.wav",
+      "far": "pulselaser-3-far.wav",
+      "tail": "pulselaser-3-tail.wav"
+    },
+    {
+      "crack": "pulselaser-4-crack.wav",
+      "body": "pulselaser-4-body.wav",
+      "mech": "pulselaser-4-mech.wav",
+      "far": "pulselaser-4-far.wav",
+      "tail": "pulselaser-4-tail.wav"
+    },
+    {
+      "crack": "pulselaser-5-crack.wav",
+      "body": "pulselaser-5-body.wav",
+      "mech": "pulselaser-5-mech.wav",
+      "far": "pulselaser-5-far.wav",
+      "tail": "pulselaser-5-tail.wav"
+    }
+  ]
+}

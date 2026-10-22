@@ -1,0 +1,59 @@
+{
+  "mix": {
+    "near": 8,
+    "far": 500,
+    "choke": [],
+    "stems": {
+      "crack": [
+        1,
+        0.2
+      ],
+      "body": [
+        1,
+        0.6
+      ],
+      "mech": [
+        0.7,
+        0.1
+      ],
+      "far": [
+        0.15,
+        1
+      ],
+      "tail": [
+        0.5,
+        1
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "blast-1-crack.wav",
+      "body": "blast-1-body.wav",
+      "mech": "blast-1-mech.wav",
+      "far": "blast-1-far.wav",
+      "tail": "blast-1-tail.wav"
+    },
+    {
+      "crack": "blast-2-crack.wav",
+      "body": "blast-2-body.wav",
+      "mech": "blast-2-mech.wav",
+      "far": "blast-2-far.wav",
+      "tail": "blast-2-tail.wav"
+    },
+    {
+      "crack": "blast-3-crack.wav",
+      "body": "blast-3-body.wav",
+      "mech": "blast-3-mech.wav",
+      "far": "blast-3-far.wav",
+      "tail": "blast-3-tail.wav"
+    },
+    {
+      "crack": "blast-4-crack.wav",
+      "body": "blast-4-body.wav",
+      "mech": "blast-4-mech.wav",
+      "far": "blast-4-far.wav",
+      "tail": "blast-4-tail.wav"
+    }
+  ]
+}

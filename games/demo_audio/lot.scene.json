@@ -1,0 +1,4107 @@
+{
+  "world": {
+    "defs": "demo_audio",
+    "player": {
+      "actions": {
+        "pedal": {
+          "label": "Throttle and brake",
+          "keys": [
+            [
+              "ArrowDown",
+              "s",
+              "Pad6"
+            ],
+            [
+              "ArrowUp",
+              "w",
+              "Pad7"
+            ]
+          ]
+        },
+        "steer": {
+          "label": "Steer",
+          "keys": [
+            [
+              "ArrowRight",
+              "d",
+              "Pad15",
+              "PadStickRight"
+            ],
+            [
+              "ArrowLeft",
+              "a",
+              "Pad14",
+              "PadStickLeft"
+            ]
+          ]
+        },
+        "brake": {
+          "label": "Brake",
+          "keys": [
+            " ",
+            "Pad0"
+          ]
+        },
+        "next": {
+          "label": "Next car",
+          "keys": [
+            "v",
+            "Tab",
+            "Pad5"
+          ]
+        },
+        "back": {
+          "label": "Car before",
+          "keys": [
+            "c",
+            "Pad4"
+          ]
+        },
+        "fire": {
+          "label": "Fire",
+          "keys": [
+            "f",
+            "Mouse0",
+            "Pad1"
+          ]
+        }
+      },
+      "deadzone": 0.15,
+      "resolution": 64
+    },
+    "loader": {
+      "assets": {
+        "demo_audio": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/demo_audio.json",
+          "preload": true
+        },
+        "kart-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/kart.engine.json"
+        },
+        "hatch-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/hatch.engine.json"
+        },
+        "muscle-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/muscle.engine.json"
+        },
+        "exotic-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/exotic.engine.json"
+        },
+        "grand-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/grand.engine.json"
+        },
+        "truck-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/truck.engine.json"
+        },
+        "pickup-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/pickup.engine.json"
+        },
+        "cart-engine": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/cart.engine.json"
+        },
+        "truck": {
+          "type": "model",
+          "url": "/games/demo_audio/assets/truck/truck.glb",
+          "preload": true
+        },
+        "volleys": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/volleys.json",
+          "preload": true
+        },
+        "effects": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/effects.json",
+          "preload": true
+        },
+        "fx": {
+          "type": "sheet",
+          "url": "/games/demo_audio/assets/fx.json",
+          "preload": true
+        },
+        "plinth-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/plinth.model.json",
+          "preload": true
+        },
+        "chaingun-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/chaingun.model.json",
+          "preload": true
+        },
+        "twinmg-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/twinmg.model.json",
+          "preload": true
+        },
+        "pd-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/pd.model.json",
+          "preload": true
+        },
+        "autocannon-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/autocannon.model.json",
+          "preload": true
+        },
+        "pulselaser-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/pulselaser.model.json",
+          "preload": true
+        },
+        "beamlaser-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/beamlaser.model.json",
+          "preload": true
+        },
+        "rockets-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/rockets.model.json",
+          "preload": true
+        },
+        "heavyrockets-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/heavyrockets.model.json",
+          "preload": true
+        },
+        "missiles-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/missiles.model.json",
+          "preload": true
+        },
+        "grenades-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/grenades.model.json",
+          "preload": true
+        },
+        "ggm-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/ggm.model.json",
+          "preload": true
+        },
+        "lgm-model": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/guns/lgm.model.json",
+          "preload": true
+        },
+        "chaingun-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/chaingun.gun.json"
+        },
+        "twinmg-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/twinmg.gun.json"
+        },
+        "pd-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/pd.gun.json"
+        },
+        "autocannon-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/autocannon.gun.json"
+        },
+        "pulselaser-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/pulselaser.gun.json"
+        },
+        "rockets-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/rockets.gun.json"
+        },
+        "heavyrockets-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/heavyrockets.gun.json"
+        },
+        "missiles-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/missiles.gun.json"
+        },
+        "grenades-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/grenades.gun.json"
+        },
+        "vls-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/vls.gun.json"
+        },
+        "blast-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/blast.gun.json"
+        },
+        "bigblast-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/bigblast.gun.json"
+        },
+        "shellhit-gun": {
+          "type": "json",
+          "url": "/games/demo_audio/assets/sounds/shellhit.gun.json"
+        },
+        "dirt-1": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/dirt-1.wav"
+        },
+        "dirt-2": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/dirt-2.wav"
+        },
+        "dirt-3": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/dirt-3.wav"
+        },
+        "dirt-4": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/dirt-4.wav"
+        },
+        "dirt-5": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/dirt-5.wav"
+        },
+        "dirt-6": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/dirt-6.wav"
+        },
+        "scorch-1": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/scorch-1.wav"
+        },
+        "scorch-2": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/scorch-2.wav"
+        },
+        "scorch-3": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/scorch-3.wav"
+        },
+        "scorch-4": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/scorch-4.wav"
+        },
+        "beam-on-1": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/beam-on-1.wav"
+        },
+        "beam-on-2": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/beam-on-2.wav"
+        },
+        "beam-off-1": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/beam-off-1.wav"
+        },
+        "beam-off-2": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/beam-off-2.wav"
+        },
+        "beam-hum": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/beam-hum.wav"
+        },
+        "chaingun-motor": {
+          "type": "sound",
+          "url": "/games/demo_audio/assets/sounds/chaingun-motor.wav"
+        }
+      }
+    },
+    "box3d": {
+      "gravity": [
+        0,
+        -9.8,
+        0
+      ],
+      "subStepCount": 4,
+      "enableSleep": true,
+      "enableContinuous": true,
+      "enableWarmStarting": false,
+      "static": [
+        {
+          "pos": [
+            0,
+            -1,
+            0
+          ],
+          "rot": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "shapes": [
+            {
+              "box": [
+                400,
+                1,
+                400
+              ],
+              "density": 0,
+              "baseMaterial": {
+                "friction": 0.9,
+                "restitution": 0,
+                "rollingResistance": 0
+              }
+            }
+          ]
+        }
+      ],
+      "kinds": {},
+      "mods": {
+        "kinds": [
+          "box3dvehicle"
+        ]
+      }
+    },
+    "box3dvehicle": {
+      "chassis": "car",
+      "wheel": "wheel",
+      "joint": "axle",
+      "vehicles": {
+        "kart": {
+          "body": {
+            "length": 2.4,
+            "width": 1.15,
+            "height": 0.35,
+            "mass": 280,
+            "center": [
+              0,
+              -0.05,
+              0
+            ],
+            "friction": 0.6,
+            "cabin": {
+              "at": -0.2,
+              "length": 1.2,
+              "width": 1.1,
+              "top": 1,
+              "topWidth": 1,
+              "height": 0.5
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 0.85,
+              "track": 1,
+              "mount": 0.1,
+              "wheel": {
+                "radius": 0.23,
+                "width": 0.2,
+                "mass": 8,
+                "friction": 1,
+                "rollingResistance": 0.02
+              },
+              "spring": {
+                "stiffness": 11000,
+                "length": 0.2,
+                "travel": 0.12,
+                "sag": 0.06
+              },
+              "damper": {
+                "bump": 520,
+                "rebound": 1050
+              },
+              "bumpStop": {
+                "length": 0.03,
+                "stiffness": 20000
+              },
+              "antiRoll": 2000,
+              "driven": false,
+              "steered": true
+            },
+            {
+              "at": -0.85,
+              "track": 1,
+              "mount": 0.1,
+              "wheel": {
+                "radius": 0.23,
+                "width": 0.2,
+                "mass": 8,
+                "friction": 1,
+                "rollingResistance": 0.02
+              },
+              "spring": {
+                "stiffness": 11000,
+                "length": 0.2,
+                "travel": 0.12,
+                "sag": 0.06
+              },
+              "damper": {
+                "bump": 520,
+                "rebound": 1050
+              },
+              "bumpStop": {
+                "length": 0.03,
+                "stiffness": 20000
+              },
+              "antiRoll": 1500,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "curve": [
+              [
+                1500,
+                10
+              ],
+              [
+                4000,
+                13
+              ],
+              [
+                7000,
+                14
+              ],
+              [
+                9500,
+                14.5
+              ],
+              [
+                11000,
+                12
+              ]
+            ],
+            "idle": 1500,
+            "launch": 2000,
+            "redline": 11000,
+            "revRate": 20000,
+            "friction": [
+              1,
+              0.4
+            ],
+            "gears": [
+              3.6,
+              2.5,
+              1.9,
+              1.5,
+              1.22
+            ],
+            "reverse": 3.6,
+            "final": 6,
+            "efficiency": 0.88,
+            "brakeTorque": 300,
+            "automatic": {
+              "up": [
+                5000,
+                10500
+              ],
+              "down": [
+                2500,
+                6000
+              ]
+            }
+          },
+          "steering": {
+            "angle": 0.6,
+            "hertz": 5,
+            "dampingRatio": 1,
+            "maxTorque": 2000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 1.5,
+            "sound": {
+              "engine": "kart-engine",
+              "at": [
+                -0.8,
+                0,
+                0
+              ],
+              "range": 90
+            },
+            "paint": {
+              "body": 14692907,
+              "cabin": 15790320,
+              "trim": 3355443,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 2829099,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.35,
+                "metalness": 0.5,
+                "clearcoat": 0.4,
+                "clearcoatRoughness": 0.2
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 24,
+            "spokes": 4,
+            "rim": 0.6,
+            "coils": 5,
+            "coilRadius": 0.04,
+            "wire": 0.008,
+            "arm": 0.025,
+            "bumpers": {
+              "depth": 0.08,
+              "height": 0.1,
+              "overhang": 0.03,
+              "round": 0.02,
+              "bolts": 2
+            },
+            "lights": {
+              "radius": 0.05,
+              "depth": 0.03,
+              "bezel": 0.012,
+              "beam": {
+                "intensity": 60,
+                "distance": 40,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.06
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 2,
+                  "distance": 4,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 2,
+                  "distance": 6,
+                  "decay": 2
+                }
+              }
+            },
+            "open": {
+              "windshield": {
+                "height": 0.55,
+                "lean": 0.15,
+                "frame": 0.03,
+                "wiper": 0.3
+              },
+              "cage": {
+                "height": 1,
+                "tube": 0.025,
+                "bend": 0.1,
+                "pad": 0
+              },
+              "wall": 0.04,
+              "floor": 0.05,
+              "corner": 0.08,
+              "door": {
+                "from": -0.6,
+                "to": 0.25,
+                "drop": 0.12,
+                "ease": 0.1
+              },
+              "rib": {
+                "at": -0.08,
+                "depth": 0.008,
+                "height": 0.03
+              },
+              "seat": {
+                "width": 0.42,
+                "depth": 0.42,
+                "base": 0.12,
+                "back": 0.45,
+                "round": 0.035,
+                "tilt": 0.12,
+                "head": 0
+              },
+              "steer": 0.16,
+              "dash": {
+                "depth": 0.08,
+                "height": 0.12
+              },
+              "hood": {
+                "drop": 0.02,
+                "round": 0.025
+              }
+            }
+          }
+        },
+        "hatch": {
+          "body": {
+            "length": 3.6,
+            "width": 1.3,
+            "height": 0.7,
+            "mass": 600,
+            "center": [
+              0.1,
+              -0.1,
+              0
+            ],
+            "friction": 0.9,
+            "cabin": {
+              "at": -0.35,
+              "length": 1.7,
+              "width": 1.2,
+              "top": 1.3,
+              "topWidth": 1.1,
+              "height": 0.55
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 16000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 8000,
+              "driven": true,
+              "steered": true
+            },
+            {
+              "at": -1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 15000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 5000,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "curve": [
+              [
+                800,
+                70
+              ],
+              [
+                2000,
+                95
+              ],
+              [
+                3500,
+                115
+              ],
+              [
+                4500,
+                110
+              ],
+              [
+                5800,
+                92
+              ],
+              [
+                6500,
+                78
+              ]
+            ],
+            "idle": 850,
+            "launch": 2200,
+            "redline": 6500,
+            "revRate": 9000,
+            "friction": [
+              8,
+              3
+            ],
+            "gears": [
+              3.6,
+              2.65,
+              2.05,
+              1.7,
+              1.45
+            ],
+            "reverse": 3.4,
+            "final": 5.2,
+            "efficiency": 0.88,
+            "brakeTorque": 600,
+            "automatic": {
+              "up": [
+                2500,
+                6000
+              ],
+              "down": [
+                1300,
+                3500
+              ]
+            }
+          },
+          "steering": {
+            "angle": 0.5,
+            "hertz": 5,
+            "dampingRatio": 1,
+            "maxTorque": 10000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 2,
+            "sound": {
+              "engine": "hatch-engine",
+              "at": [
+                1.2,
+                0,
+                0
+              ],
+              "range": 150
+            },
+            "paint": {
+              "body": 4161488,
+              "cabin": 15905331,
+              "trim": 1842204,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 2829099,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.35,
+                "metalness": 0.5,
+                "clearcoat": 0.4,
+                "clearcoatRoughness": 0.2
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 32,
+            "spokes": 5,
+            "rim": 0.55,
+            "coils": 7,
+            "coilRadius": 0.07,
+            "wire": 0.014,
+            "arm": 0.035,
+            "tread": {
+              "blocks": 22,
+              "depth": 0.032,
+              "angle": 0.4
+            },
+            "bumpers": {
+              "depth": 0.15,
+              "height": 0.2,
+              "overhang": 0.3,
+              "round": 0.03,
+              "bolts": 4,
+              "hooks": 0.45
+            },
+            "grille": {
+              "slots": 7,
+              "width": 0.6,
+              "height": 0.3,
+              "depth": 0.06,
+              "paint": "body"
+            },
+            "lights": {
+              "radius": 0.1,
+              "depth": 0.05,
+              "bezel": 0.025,
+              "beam": {
+                "intensity": 120,
+                "distance": 60,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.06
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 3,
+                  "distance": 6,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 3,
+                  "distance": 8,
+                  "decay": 2
+                }
+              },
+              "parking": {
+                "radius": 0.035,
+                "depth": 0.05,
+                "glow": 0.6
+              }
+            },
+            "spare": {
+              "lift": 0.1
+            },
+            "open": {
+              "windshield": {
+                "height": 0.5,
+                "lean": 0.35,
+                "frame": 0.05,
+                "wiper": 0.3
+              },
+              "cage": {
+                "height": 0.6,
+                "tube": 0.035,
+                "bend": 0.12,
+                "pad": 0.05
+              },
+              "wall": 0.06,
+              "floor": 0.08,
+              "corner": 0.14,
+              "door": {
+                "from": -1,
+                "to": 0.4,
+                "drop": 0.26,
+                "ease": 0.18
+              },
+              "rib": {
+                "at": -0.1,
+                "depth": 0.012,
+                "height": 0.04
+              },
+              "seat": {
+                "width": 0.45,
+                "depth": 0.45,
+                "base": 0.14,
+                "back": 0.5,
+                "round": 0.04,
+                "tilt": 0.18,
+                "head": 0.16
+              },
+              "bench": true,
+              "steer": 0.17,
+              "dash": {
+                "depth": 0.12,
+                "height": 0.2
+              },
+              "tunnel": {
+                "width": 0.26,
+                "height": 0.1
+              },
+              "stick": 0.28,
+              "hood": {
+                "drop": 0.04,
+                "round": 0.035,
+                "dome": {
+                  "inset": 0.14,
+                  "height": 0.02
+                }
+              },
+              "rocker": {
+                "height": 0.1,
+                "depth": 0.05
+              },
+              "mirror": {
+                "size": 0.12,
+                "arm": 0.1
+              }
+            },
+            "fenders": {
+              "gap": 0.04,
+              "thickness": 0.025,
+              "flare": 0.01,
+              "round": 0.01,
+              "ease": 0.15,
+              "square": 2.4
+            }
+          }
+        },
+        "muscle": {
+          "body": {
+            "length": 3.6,
+            "width": 1.3,
+            "height": 0.7,
+            "mass": 1200,
+            "center": [
+              0.1,
+              -0.1,
+              0
+            ],
+            "friction": 0.9,
+            "cabin": {
+              "at": -0.35,
+              "length": 1.7,
+              "width": 1.2,
+              "top": 1.3,
+              "topWidth": 1.1,
+              "height": 0.55
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 16000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 8000,
+              "driven": true,
+              "steered": true
+            },
+            {
+              "at": -1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 15000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 5000,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "curve": [
+              [
+                700,
+                180
+              ],
+              [
+                2000,
+                260
+              ],
+              [
+                3500,
+                300
+              ],
+              [
+                4500,
+                290
+              ],
+              [
+                5500,
+                250
+              ],
+              [
+                6200,
+                220
+              ]
+            ],
+            "idle": 700,
+            "launch": 1800,
+            "redline": 6200,
+            "revRate": 8000,
+            "friction": [
+              12,
+              4
+            ],
+            "gears": [
+              3.6,
+              2.3,
+              1.6,
+              1.15,
+              0.85
+            ],
+            "reverse": 3.6,
+            "final": 3.7,
+            "efficiency": 0.88,
+            "brakeTorque": 900,
+            "automatic": {
+              "up": [
+                2200,
+                5800
+              ],
+              "down": [
+                1100,
+                3000
+              ]
+            }
+          },
+          "steering": {
+            "angle": 0.5,
+            "hertz": 5,
+            "dampingRatio": 1,
+            "maxTorque": 10000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 2,
+            "sound": {
+              "engine": "muscle-engine",
+              "at": [
+                1.2,
+                0,
+                0
+              ],
+              "range": 220
+            },
+            "paint": {
+              "body": 2039588,
+              "cabin": 15905331,
+              "trim": 1842204,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 2829099,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.35,
+                "metalness": 0.5,
+                "clearcoat": 0.4,
+                "clearcoatRoughness": 0.2
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 32,
+            "spokes": 5,
+            "rim": 0.55,
+            "coils": 7,
+            "coilRadius": 0.07,
+            "wire": 0.014,
+            "arm": 0.035,
+            "tread": {
+              "blocks": 22,
+              "depth": 0.032,
+              "angle": 0.4
+            },
+            "bumpers": {
+              "depth": 0.15,
+              "height": 0.2,
+              "overhang": 0.3,
+              "round": 0.03,
+              "bolts": 4,
+              "hooks": 0.45
+            },
+            "grille": {
+              "slots": 7,
+              "width": 0.6,
+              "height": 0.3,
+              "depth": 0.06,
+              "paint": "body"
+            },
+            "lights": {
+              "radius": 0.1,
+              "depth": 0.05,
+              "bezel": 0.025,
+              "beam": {
+                "intensity": 120,
+                "distance": 60,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.06
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 3,
+                  "distance": 6,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 3,
+                  "distance": 8,
+                  "decay": 2
+                }
+              },
+              "parking": {
+                "radius": 0.035,
+                "depth": 0.05,
+                "glow": 0.6
+              }
+            },
+            "spare": {
+              "lift": 0.1
+            },
+            "open": {
+              "windshield": {
+                "height": 0.5,
+                "lean": 0.35,
+                "frame": 0.05,
+                "wiper": 0.3
+              },
+              "cage": {
+                "height": 0.6,
+                "tube": 0.035,
+                "bend": 0.12,
+                "pad": 0.05
+              },
+              "wall": 0.06,
+              "floor": 0.08,
+              "corner": 0.14,
+              "door": {
+                "from": -1,
+                "to": 0.4,
+                "drop": 0.26,
+                "ease": 0.18
+              },
+              "rib": {
+                "at": -0.1,
+                "depth": 0.012,
+                "height": 0.04
+              },
+              "seat": {
+                "width": 0.45,
+                "depth": 0.45,
+                "base": 0.14,
+                "back": 0.5,
+                "round": 0.04,
+                "tilt": 0.18,
+                "head": 0.16
+              },
+              "bench": true,
+              "steer": 0.17,
+              "dash": {
+                "depth": 0.12,
+                "height": 0.2
+              },
+              "tunnel": {
+                "width": 0.26,
+                "height": 0.1
+              },
+              "stick": 0.28,
+              "hood": {
+                "drop": 0.04,
+                "round": 0.035,
+                "dome": {
+                  "inset": 0.14,
+                  "height": 0.02
+                }
+              },
+              "rocker": {
+                "height": 0.1,
+                "depth": 0.05
+              },
+              "mirror": {
+                "size": 0.12,
+                "arm": 0.1
+              }
+            },
+            "fenders": {
+              "gap": 0.04,
+              "thickness": 0.025,
+              "flare": 0.01,
+              "round": 0.01,
+              "ease": 0.15,
+              "square": 2.4
+            }
+          }
+        },
+        "exotic": {
+          "body": {
+            "length": 3.6,
+            "width": 1.3,
+            "height": 0.7,
+            "mass": 1100,
+            "center": [
+              0.1,
+              -0.1,
+              0
+            ],
+            "friction": 0.9,
+            "cabin": {
+              "at": -0.35,
+              "length": 1.7,
+              "width": 1.2,
+              "top": 1.3,
+              "topWidth": 1.1,
+              "height": 0.55
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 16000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 8000,
+              "driven": true,
+              "steered": true
+            },
+            {
+              "at": -1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 15000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 5000,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "curve": [
+              [
+                1000,
+                150
+              ],
+              [
+                3000,
+                220
+              ],
+              [
+                5500,
+                260
+              ],
+              [
+                7500,
+                250
+              ],
+              [
+                9000,
+                210
+              ]
+            ],
+            "idle": 1000,
+            "launch": 2200,
+            "redline": 9000,
+            "revRate": 15000,
+            "friction": [
+              10,
+              3.5
+            ],
+            "gears": [
+              4,
+              2.6,
+              1.9,
+              1.5,
+              1.18,
+              0.94
+            ],
+            "reverse": 4,
+            "final": 4.1,
+            "efficiency": 0.88,
+            "brakeTorque": 900,
+            "automatic": {
+              "up": [
+                3000,
+                8600
+              ],
+              "down": [
+                1500,
+                4500
+              ]
+            }
+          },
+          "steering": {
+            "angle": 0.5,
+            "hertz": 5,
+            "dampingRatio": 1,
+            "maxTorque": 10000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 2,
+            "sound": {
+              "engine": "exotic-engine",
+              "at": [
+                -0.6,
+                0,
+                0
+              ],
+              "range": 220
+            },
+            "paint": {
+              "body": 14163486,
+              "cabin": 15905331,
+              "trim": 1842204,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 2829099,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.35,
+                "metalness": 0.5,
+                "clearcoat": 0.4,
+                "clearcoatRoughness": 0.2
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 32,
+            "spokes": 5,
+            "rim": 0.55,
+            "coils": 7,
+            "coilRadius": 0.07,
+            "wire": 0.014,
+            "arm": 0.035,
+            "tread": {
+              "blocks": 22,
+              "depth": 0.032,
+              "angle": 0.4
+            },
+            "bumpers": {
+              "depth": 0.15,
+              "height": 0.2,
+              "overhang": 0.3,
+              "round": 0.03,
+              "bolts": 4,
+              "hooks": 0.45
+            },
+            "grille": {
+              "slots": 7,
+              "width": 0.6,
+              "height": 0.3,
+              "depth": 0.06,
+              "paint": "body"
+            },
+            "lights": {
+              "radius": 0.1,
+              "depth": 0.05,
+              "bezel": 0.025,
+              "beam": {
+                "intensity": 120,
+                "distance": 60,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.06
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 3,
+                  "distance": 6,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 3,
+                  "distance": 8,
+                  "decay": 2
+                }
+              },
+              "parking": {
+                "radius": 0.035,
+                "depth": 0.05,
+                "glow": 0.6
+              }
+            },
+            "spare": {
+              "lift": 0.1
+            },
+            "open": {
+              "windshield": {
+                "height": 0.5,
+                "lean": 0.35,
+                "frame": 0.05,
+                "wiper": 0.3
+              },
+              "cage": {
+                "height": 0.6,
+                "tube": 0.035,
+                "bend": 0.12,
+                "pad": 0.05
+              },
+              "wall": 0.06,
+              "floor": 0.08,
+              "corner": 0.14,
+              "door": {
+                "from": -1,
+                "to": 0.4,
+                "drop": 0.26,
+                "ease": 0.18
+              },
+              "rib": {
+                "at": -0.1,
+                "depth": 0.012,
+                "height": 0.04
+              },
+              "seat": {
+                "width": 0.45,
+                "depth": 0.45,
+                "base": 0.14,
+                "back": 0.5,
+                "round": 0.04,
+                "tilt": 0.18,
+                "head": 0.16
+              },
+              "bench": true,
+              "steer": 0.17,
+              "dash": {
+                "depth": 0.12,
+                "height": 0.2
+              },
+              "tunnel": {
+                "width": 0.26,
+                "height": 0.1
+              },
+              "stick": 0.28,
+              "hood": {
+                "drop": 0.04,
+                "round": 0.035,
+                "dome": {
+                  "inset": 0.14,
+                  "height": 0.02
+                }
+              },
+              "rocker": {
+                "height": 0.1,
+                "depth": 0.05
+              },
+              "mirror": {
+                "size": 0.12,
+                "arm": 0.1
+              }
+            },
+            "fenders": {
+              "gap": 0.04,
+              "thickness": 0.025,
+              "flare": 0.01,
+              "round": 0.01,
+              "ease": 0.15,
+              "square": 2.4
+            }
+          }
+        },
+        "grand": {
+          "body": {
+            "length": 3.6,
+            "width": 1.3,
+            "height": 0.7,
+            "mass": 1300,
+            "center": [
+              0.1,
+              -0.1,
+              0
+            ],
+            "friction": 0.9,
+            "cabin": {
+              "at": -0.35,
+              "length": 1.7,
+              "width": 1.2,
+              "top": 1.3,
+              "topWidth": 1.1,
+              "height": 0.55
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 16000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 8000,
+              "driven": true,
+              "steered": true
+            },
+            {
+              "at": -1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 15000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 5000,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "curve": [
+              [
+                900,
+                200
+              ],
+              [
+                3000,
+                300
+              ],
+              [
+                5500,
+                340
+              ],
+              [
+                7000,
+                330
+              ],
+              [
+                8500,
+                290
+              ]
+            ],
+            "idle": 900,
+            "launch": 1800,
+            "redline": 8500,
+            "revRate": 12000,
+            "friction": [
+              14,
+              4.5
+            ],
+            "gears": [
+              4.1,
+              2.6,
+              1.85,
+              1.4,
+              1.1,
+              0.87
+            ],
+            "reverse": 4.1,
+            "final": 3.6,
+            "efficiency": 0.88,
+            "brakeTorque": 1000,
+            "automatic": {
+              "up": [
+                2800,
+                8000
+              ],
+              "down": [
+                1400,
+                4200
+              ]
+            }
+          },
+          "steering": {
+            "angle": 0.5,
+            "hertz": 5,
+            "dampingRatio": 1,
+            "maxTorque": 10000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 2,
+            "sound": {
+              "engine": "grand-engine",
+              "at": [
+                1.2,
+                0,
+                0
+              ],
+              "range": 220
+            },
+            "paint": {
+              "body": 2902574,
+              "cabin": 15905331,
+              "trim": 1842204,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 2829099,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.35,
+                "metalness": 0.5,
+                "clearcoat": 0.4,
+                "clearcoatRoughness": 0.2
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 32,
+            "spokes": 5,
+            "rim": 0.55,
+            "coils": 7,
+            "coilRadius": 0.07,
+            "wire": 0.014,
+            "arm": 0.035,
+            "tread": {
+              "blocks": 22,
+              "depth": 0.032,
+              "angle": 0.4
+            },
+            "bumpers": {
+              "depth": 0.15,
+              "height": 0.2,
+              "overhang": 0.3,
+              "round": 0.03,
+              "bolts": 4,
+              "hooks": 0.45
+            },
+            "grille": {
+              "slots": 7,
+              "width": 0.6,
+              "height": 0.3,
+              "depth": 0.06,
+              "paint": "body"
+            },
+            "lights": {
+              "radius": 0.1,
+              "depth": 0.05,
+              "bezel": 0.025,
+              "beam": {
+                "intensity": 120,
+                "distance": 60,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.06
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 3,
+                  "distance": 6,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 3,
+                  "distance": 8,
+                  "decay": 2
+                }
+              },
+              "parking": {
+                "radius": 0.035,
+                "depth": 0.05,
+                "glow": 0.6
+              }
+            },
+            "spare": {
+              "lift": 0.1
+            },
+            "open": {
+              "windshield": {
+                "height": 0.5,
+                "lean": 0.35,
+                "frame": 0.05,
+                "wiper": 0.3
+              },
+              "cage": {
+                "height": 0.6,
+                "tube": 0.035,
+                "bend": 0.12,
+                "pad": 0.05
+              },
+              "wall": 0.06,
+              "floor": 0.08,
+              "corner": 0.14,
+              "door": {
+                "from": -1,
+                "to": 0.4,
+                "drop": 0.26,
+                "ease": 0.18
+              },
+              "rib": {
+                "at": -0.1,
+                "depth": 0.012,
+                "height": 0.04
+              },
+              "seat": {
+                "width": 0.45,
+                "depth": 0.45,
+                "base": 0.14,
+                "back": 0.5,
+                "round": 0.04,
+                "tilt": 0.18,
+                "head": 0.16
+              },
+              "bench": true,
+              "steer": 0.17,
+              "dash": {
+                "depth": 0.12,
+                "height": 0.2
+              },
+              "tunnel": {
+                "width": 0.26,
+                "height": 0.1
+              },
+              "stick": 0.28,
+              "hood": {
+                "drop": 0.04,
+                "round": 0.035,
+                "dome": {
+                  "inset": 0.14,
+                  "height": 0.02
+                }
+              },
+              "rocker": {
+                "height": 0.1,
+                "depth": 0.05
+              },
+              "mirror": {
+                "size": 0.12,
+                "arm": 0.1
+              }
+            },
+            "fenders": {
+              "gap": 0.04,
+              "thickness": 0.025,
+              "flare": 0.01,
+              "round": 0.01,
+              "ease": 0.15,
+              "square": 2.4
+            }
+          }
+        },
+        "truck": {
+          "body": {
+            "length": 5,
+            "width": 2.4,
+            "height": 1,
+            "mass": 4500,
+            "center": [
+              0,
+              -0.1,
+              0
+            ],
+            "friction": 0.9,
+            "cabin": {
+              "at": -0.03,
+              "length": 1.76,
+              "width": 2,
+              "top": 1.35,
+              "topWidth": 1.8,
+              "height": 1
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 1.9,
+              "track": 3.6,
+              "mount": 0.3,
+              "wheel": {
+                "radius": 0.85,
+                "width": 0.9,
+                "mass": 300,
+                "friction": 1.1,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 44400,
+                "length": 1.2,
+                "travel": 1,
+                "sag": 0.25
+              },
+              "damper": {
+                "bump": 4200,
+                "rebound": 8500
+              },
+              "bumpStop": {
+                "length": 0.15,
+                "stiffness": 200000
+              },
+              "antiRoll": 30000,
+              "driven": true,
+              "steered": true
+            },
+            {
+              "at": -1.9,
+              "track": 3.6,
+              "mount": 0.3,
+              "wheel": {
+                "radius": 0.85,
+                "width": 0.9,
+                "mass": 300,
+                "friction": 1.1,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 44400,
+                "length": 1.2,
+                "travel": 1,
+                "sag": 0.25
+              },
+              "damper": {
+                "bump": 4200,
+                "rebound": 8500
+              },
+              "bumpStop": {
+                "length": 0.15,
+                "stiffness": 200000
+              },
+              "antiRoll": 20000,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "curve": [
+              [
+                800,
+                700
+              ],
+              [
+                2000,
+                1100
+              ],
+              [
+                3500,
+                1250
+              ],
+              [
+                4500,
+                1150
+              ],
+              [
+                5500,
+                1000
+              ]
+            ],
+            "idle": 800,
+            "launch": 1800,
+            "redline": 5500,
+            "revRate": 6000,
+            "friction": [
+              40,
+              15
+            ],
+            "gears": [
+              4,
+              2.4,
+              1.6
+            ],
+            "reverse": 4,
+            "final": 11,
+            "efficiency": 0.85,
+            "brakeTorque": 9000,
+            "automatic": {
+              "up": [
+                2200,
+                5000
+              ],
+              "down": [
+                1200,
+                2800
+              ]
+            }
+          },
+          "steering": {
+            "angle": 0.45,
+            "hertz": 4,
+            "dampingRatio": 1,
+            "maxTorque": 60000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 2.5,
+            "model": {
+              "asset": "truck"
+            },
+            "sound": {
+              "engine": "truck-engine",
+              "at": [
+                1.6,
+                0,
+                0
+              ],
+              "range": 260
+            },
+            "paint": {
+              "body": 15119394,
+              "cabin": 1856936,
+              "trim": 1842204,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 13685718,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.15,
+                "metalness": 1
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 40,
+            "spokes": 6,
+            "rim": 0.45,
+            "coils": 9,
+            "coilRadius": 0.1,
+            "wire": 0.025,
+            "arm": 0.08,
+            "tread": {
+              "blocks": 24,
+              "depth": 0.12,
+              "angle": 0.4
+            },
+            "solid": {
+              "pivot": 0.27,
+              "housing": 0.085,
+              "pumpkin": {
+                "radius": 0.2,
+                "pinion": {
+                  "radius": 0.07,
+                  "length": 0.16
+                },
+                "cover": 0.15
+              },
+              "knuckle": {
+                "radius": 0.06,
+                "height": 0.3
+              },
+              "brake": {
+                "radius": 0.27,
+                "thick": 0.035,
+                "at": 0.19,
+                "caliper": 0.055
+              },
+              "links": {
+                "radius": 0.032,
+                "end": 0.05,
+                "lower": {
+                  "frame": [
+                    1.05,
+                    -0.36,
+                    0.45
+                  ],
+                  "on": [
+                    0,
+                    -0.1,
+                    0.62
+                  ]
+                },
+                "upper": {
+                  "frame": [
+                    0.95,
+                    -0.12,
+                    0.54
+                  ],
+                  "on": [
+                    0.12,
+                    0.11,
+                    0.54
+                  ]
+                },
+                "track": {
+                  "frame": [
+                    -0.3,
+                    -0.2,
+                    -0.48
+                  ],
+                  "on": [
+                    -0.3,
+                    0,
+                    0.72
+                  ]
+                }
+              },
+              "shocks": [
+                {
+                  "along": -0.27,
+                  "on": [
+                    0.09,
+                    1.1
+                  ],
+                  "top": [
+                    0.44,
+                    0.9
+                  ],
+                  "radius": 0.045,
+                  "body": 0.26,
+                  "shaft": 0.02,
+                  "reservoir": {
+                    "radius": 0.032,
+                    "length": 0.2,
+                    "gap": 0.085
+                  }
+                },
+                {
+                  "along": -0.09,
+                  "on": [
+                    0.09,
+                    1.1
+                  ],
+                  "top": [
+                    0.44,
+                    0.9
+                  ],
+                  "radius": 0.045,
+                  "body": 0.26,
+                  "shaft": 0.02,
+                  "coil": {
+                    "radius": 0.075,
+                    "wire": 0.012,
+                    "turns": 6,
+                    "low": 0.07,
+                    "high": 0.05,
+                    "free": 0.95
+                  }
+                },
+                {
+                  "along": 0.09,
+                  "on": [
+                    0.09,
+                    1.1
+                  ],
+                  "top": [
+                    0.44,
+                    0.9
+                  ],
+                  "radius": 0.045,
+                  "body": 0.26,
+                  "shaft": 0.02,
+                  "coil": {
+                    "radius": 0.075,
+                    "wire": 0.012,
+                    "turns": 6,
+                    "low": 0.07,
+                    "high": 0.05,
+                    "free": 0.95
+                  }
+                },
+                {
+                  "along": 0.27,
+                  "on": [
+                    0.09,
+                    1.1
+                  ],
+                  "top": [
+                    0.44,
+                    0.9
+                  ],
+                  "radius": 0.045,
+                  "body": 0.26,
+                  "shaft": 0.02,
+                  "reservoir": {
+                    "radius": 0.032,
+                    "length": 0.2,
+                    "gap": 0.085
+                  }
+                }
+              ],
+              "ceiling": 0.33,
+              "bump": {
+                "across": 0.56,
+                "radius": 0.04
+              },
+              "strap": {
+                "along": 0.18,
+                "across": 0.7,
+                "drop": 0.04,
+                "width": 0.05,
+                "thick": 0.008,
+                "length": 1.105
+              },
+              "steer": {
+                "arm": [
+                  0.2,
+                  -0.13,
+                  0.3
+                ],
+                "rod": 0.03,
+                "ram": {
+                  "on": [
+                    0.2,
+                    -0.05,
+                    -0.95
+                  ],
+                  "to": 0.75,
+                  "radius": 0.04,
+                  "length": 0.45,
+                  "rod": 0.018
+                }
+              },
+              "shaft": {
+                "radius": 0.045,
+                "joint": [
+                  0.06,
+                  0.07
+                ],
+                "slip": [
+                  0.055,
+                  0.2
+                ]
+              },
+              "axles": [
+                {
+                  "pumpkin": -0.3,
+                  "shaft": [
+                    0.33,
+                    -0.3,
+                    -0.3
+                  ]
+                },
+                {
+                  "pumpkin": 0.05,
+                  "shaft": [
+                    -0.48,
+                    -0.3,
+                    0.05
+                  ]
+                }
+              ]
+            },
+            "lights": {
+              "radius": 0.16,
+              "depth": 0.08,
+              "bezel": 0.04,
+              "beam": {
+                "intensity": 200,
+                "distance": 80,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.05
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 5,
+                  "distance": 9,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 5,
+                  "distance": 12,
+                  "decay": 2
+                }
+              }
+            }
+          }
+        },
+        "pickup": {
+          "body": {
+            "length": 3.6,
+            "width": 1.3,
+            "height": 0.7,
+            "mass": 1500,
+            "center": [
+              0.1,
+              -0.1,
+              0
+            ],
+            "friction": 0.9,
+            "cabin": {
+              "at": -0.35,
+              "length": 1.7,
+              "width": 1.2,
+              "top": 1.3,
+              "topWidth": 1.1,
+              "height": 0.55
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 16000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 8000,
+              "driven": true,
+              "steered": true
+            },
+            {
+              "at": -1.25,
+              "track": 1.7,
+              "mount": 0.2,
+              "wheel": {
+                "radius": 0.42,
+                "width": 0.32,
+                "mass": 20,
+                "friction": 0.9,
+                "rollingResistance": 0
+              },
+              "spring": {
+                "stiffness": 15000,
+                "length": 0.55,
+                "travel": 0.3,
+                "sag": 0.1
+              },
+              "damper": {
+                "bump": 800,
+                "rebound": 2200
+              },
+              "bumpStop": {
+                "length": 0.06,
+                "stiffness": 30000
+              },
+              "antiRoll": 5000,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "curve": [
+              [
+                650,
+                350
+              ],
+              [
+                1500,
+                600
+              ],
+              [
+                2500,
+                650
+              ],
+              [
+                3200,
+                600
+              ],
+              [
+                4000,
+                480
+              ]
+            ],
+            "idle": 650,
+            "launch": 1500,
+            "redline": 4000,
+            "revRate": 5000,
+            "friction": [
+              20,
+              8
+            ],
+            "gears": [
+              3.5,
+              2.2,
+              1.5,
+              1.1,
+              0.85
+            ],
+            "reverse": 3.4,
+            "final": 3.9,
+            "efficiency": 0.88,
+            "brakeTorque": 1200,
+            "automatic": {
+              "up": [
+                1600,
+                3700
+              ],
+              "down": [
+                900,
+                2000
+              ]
+            }
+          },
+          "steering": {
+            "angle": 0.5,
+            "hertz": 5,
+            "dampingRatio": 1,
+            "maxTorque": 10000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 2,
+            "sound": {
+              "engine": "pickup-engine",
+              "at": [
+                1.2,
+                0,
+                0
+              ],
+              "range": 240
+            },
+            "paint": {
+              "body": 9067059,
+              "cabin": 15905331,
+              "trim": 1842204,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 2829099,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.35,
+                "metalness": 0.5,
+                "clearcoat": 0.4,
+                "clearcoatRoughness": 0.2
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 32,
+            "spokes": 5,
+            "rim": 0.55,
+            "coils": 7,
+            "coilRadius": 0.07,
+            "wire": 0.014,
+            "arm": 0.035,
+            "tread": {
+              "blocks": 22,
+              "depth": 0.032,
+              "angle": 0.4
+            },
+            "bumpers": {
+              "depth": 0.15,
+              "height": 0.2,
+              "overhang": 0.3,
+              "round": 0.03,
+              "bolts": 4,
+              "hooks": 0.45
+            },
+            "grille": {
+              "slots": 7,
+              "width": 0.6,
+              "height": 0.3,
+              "depth": 0.06,
+              "paint": "body"
+            },
+            "lights": {
+              "radius": 0.1,
+              "depth": 0.05,
+              "bezel": 0.025,
+              "beam": {
+                "intensity": 120,
+                "distance": 60,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.06
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 3,
+                  "distance": 6,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 3,
+                  "distance": 8,
+                  "decay": 2
+                }
+              },
+              "parking": {
+                "radius": 0.035,
+                "depth": 0.05,
+                "glow": 0.6
+              }
+            },
+            "spare": {
+              "lift": 0.1
+            },
+            "open": {
+              "windshield": {
+                "height": 0.5,
+                "lean": 0.35,
+                "frame": 0.05,
+                "wiper": 0.3
+              },
+              "cage": {
+                "height": 0.6,
+                "tube": 0.035,
+                "bend": 0.12,
+                "pad": 0.05
+              },
+              "wall": 0.06,
+              "floor": 0.08,
+              "corner": 0.14,
+              "door": {
+                "from": -1,
+                "to": 0.4,
+                "drop": 0.26,
+                "ease": 0.18
+              },
+              "rib": {
+                "at": -0.1,
+                "depth": 0.012,
+                "height": 0.04
+              },
+              "seat": {
+                "width": 0.45,
+                "depth": 0.45,
+                "base": 0.14,
+                "back": 0.5,
+                "round": 0.04,
+                "tilt": 0.18,
+                "head": 0.16
+              },
+              "bench": true,
+              "steer": 0.17,
+              "dash": {
+                "depth": 0.12,
+                "height": 0.2
+              },
+              "tunnel": {
+                "width": 0.26,
+                "height": 0.1
+              },
+              "stick": 0.28,
+              "hood": {
+                "drop": 0.04,
+                "round": 0.035,
+                "dome": {
+                  "inset": 0.14,
+                  "height": 0.02
+                }
+              },
+              "rocker": {
+                "height": 0.1,
+                "depth": 0.05
+              },
+              "mirror": {
+                "size": 0.12,
+                "arm": 0.1
+              }
+            },
+            "fenders": {
+              "gap": 0.04,
+              "thickness": 0.025,
+              "flare": 0.01,
+              "round": 0.01,
+              "ease": 0.15,
+              "square": 2.4
+            }
+          }
+        },
+        "cart": {
+          "body": {
+            "length": 2.4,
+            "width": 1.15,
+            "height": 0.35,
+            "mass": 280,
+            "center": [
+              0,
+              -0.05,
+              0
+            ],
+            "friction": 0.6,
+            "cabin": {
+              "at": -0.2,
+              "length": 1.2,
+              "width": 1.1,
+              "top": 1,
+              "topWidth": 1,
+              "height": 0.5
+            }
+          },
+          "bodies": {
+            "enableContactRecycling": false
+          },
+          "axles": [
+            {
+              "at": 0.85,
+              "track": 1,
+              "mount": 0.1,
+              "wheel": {
+                "radius": 0.23,
+                "width": 0.2,
+                "mass": 8,
+                "friction": 0.7,
+                "rollingResistance": 0.02
+              },
+              "spring": {
+                "stiffness": 11000,
+                "length": 0.2,
+                "travel": 0.12,
+                "sag": 0.06
+              },
+              "damper": {
+                "bump": 520,
+                "rebound": 1050
+              },
+              "bumpStop": {
+                "length": 0.03,
+                "stiffness": 20000
+              },
+              "antiRoll": 2000,
+              "driven": false,
+              "steered": true
+            },
+            {
+              "at": -0.85,
+              "track": 1,
+              "mount": 0.1,
+              "wheel": {
+                "radius": 0.23,
+                "width": 0.2,
+                "mass": 8,
+                "friction": 0.7,
+                "rollingResistance": 0.02
+              },
+              "spring": {
+                "stiffness": 11000,
+                "length": 0.2,
+                "travel": 0.12,
+                "sag": 0.06
+              },
+              "damper": {
+                "bump": 520,
+                "rebound": 1050
+              },
+              "bumpStop": {
+                "length": 0.03,
+                "stiffness": 20000
+              },
+              "antiRoll": 1500,
+              "driven": true,
+              "steered": false
+            }
+          ],
+          "engine": {
+            "torque": 30,
+            "power": 4000,
+            "redline": 4000,
+            "ratio": 13.9,
+            "efficiency": 0.9,
+            "regen": 6,
+            "brakeTorque": 300
+          },
+          "steering": {
+            "angle": 0.6,
+            "hertz": 5,
+            "dampingRatio": 1,
+            "maxTorque": 2000
+          },
+          "pedal": {
+            "stop": 0.5
+          },
+          "look": {
+            "lock": 1.5,
+            "sound": {
+              "engine": "cart-engine",
+              "at": [
+                -0.7,
+                -0.1,
+                0
+              ],
+              "range": 60
+            },
+            "paint": {
+              "body": 15921906,
+              "cabin": 15790320,
+              "trim": 3355443,
+              "glass": 10471126,
+              "light": 16774338,
+              "tail": 13707807,
+              "tyre": 1710618,
+              "rim": 2829099,
+              "spring": 14826539,
+              "damper": 12105912,
+              "arm": 2763306,
+              "chrome": 14211804,
+              "seat": 8017462,
+              "amber": 16751135,
+              "hook": 12592669
+            },
+            "finish": {
+              "body": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "cabin": {
+                "roughness": 0.38,
+                "metalness": 0.15,
+                "clearcoat": 1,
+                "clearcoatRoughness": 0.06
+              },
+              "trim": {
+                "roughness": 0.8,
+                "metalness": 0
+              },
+              "glass": {
+                "roughness": 0.02,
+                "metalness": 0,
+                "opacity": 0.22
+              },
+              "light": {
+                "roughness": 0.05,
+                "metalness": 0,
+                "opacity": 0.75
+              },
+              "tail": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "amber": {
+                "roughness": 0.1,
+                "metalness": 0,
+                "opacity": 0.9
+              },
+              "chrome": {
+                "roughness": 0.1,
+                "metalness": 1
+              },
+              "seat": {
+                "roughness": 0.55,
+                "metalness": 0,
+                "sheen": 0.5,
+                "sheenRoughness": 0.45
+              },
+              "hook": {
+                "roughness": 0.35,
+                "metalness": 0.1,
+                "clearcoat": 0.8,
+                "clearcoatRoughness": 0.1
+              },
+              "tyre": {
+                "roughness": 0.92,
+                "metalness": 0
+              },
+              "rim": {
+                "roughness": 0.35,
+                "metalness": 0.5,
+                "clearcoat": 0.4,
+                "clearcoatRoughness": 0.2
+              },
+              "spring": {
+                "roughness": 0.4,
+                "metalness": 0.7
+              },
+              "damper": {
+                "roughness": 0.3,
+                "metalness": 0.9
+              },
+              "arm": {
+                "roughness": 0.5,
+                "metalness": 0.6
+              }
+            },
+            "segments": 24,
+            "spokes": 4,
+            "rim": 0.6,
+            "coils": 5,
+            "coilRadius": 0.04,
+            "wire": 0.008,
+            "arm": 0.025,
+            "bumpers": {
+              "depth": 0.08,
+              "height": 0.1,
+              "overhang": 0.03,
+              "round": 0.02,
+              "bolts": 2
+            },
+            "lights": {
+              "radius": 0.05,
+              "depth": 0.03,
+              "bezel": 0.012,
+              "beam": {
+                "intensity": 60,
+                "distance": 40,
+                "decay": 2,
+                "angle": 0.45,
+                "penumbra": 0.5,
+                "dip": 0.06
+              },
+              "tail": {
+                "glow": 0.4,
+                "brake": 3,
+                "light": {
+                  "intensity": 2,
+                  "distance": 4,
+                  "decay": 2
+                }
+              },
+              "reverse": {
+                "glow": 2,
+                "light": {
+                  "intensity": 2,
+                  "distance": 6,
+                  "decay": 2
+                }
+              }
+            },
+            "open": {
+              "windshield": {
+                "height": 0.55,
+                "lean": 0.15,
+                "frame": 0.03,
+                "wiper": 0.3
+              },
+              "cage": {
+                "height": 1,
+                "tube": 0.025,
+                "bend": 0.1,
+                "pad": 0
+              },
+              "wall": 0.04,
+              "floor": 0.05,
+              "corner": 0.08,
+              "door": {
+                "from": -0.6,
+                "to": 0.25,
+                "drop": 0.12,
+                "ease": 0.1
+              },
+              "rib": {
+                "at": -0.08,
+                "depth": 0.008,
+                "height": 0.03
+              },
+              "seat": {
+                "width": 0.42,
+                "depth": 0.42,
+                "base": 0.12,
+                "back": 0.45,
+                "round": 0.035,
+                "tilt": 0.12,
+                "head": 0
+              },
+              "steer": 0.16,
+              "dash": {
+                "depth": 0.08,
+                "height": 0.12
+              },
+              "hood": {
+                "drop": 0.02,
+                "round": 0.025
+              }
+            }
+          }
+        }
+      },
+      "mods": {
+        "gravity": "box3d",
+        "sound": "audio"
+      }
+    },
+    "audio": {
+      "hold": 0.25,
+      "space": {
+        "model": "inverse",
+        "ref": 4,
+        "max": 250,
+        "rolloff": 1
+      },
+      "cues": {
+        "chaingun": {
+          "gun": "chaingun-gun",
+          "gain": 0.85,
+          "range": 900
+        },
+        "twinmg": {
+          "gun": "twinmg-gun",
+          "gain": 0.85,
+          "range": 900
+        },
+        "pd": {
+          "gun": "pd-gun",
+          "gain": 0.9,
+          "range": 900
+        },
+        "autocannon": {
+          "gun": "autocannon-gun",
+          "gain": 1,
+          "range": 1200
+        },
+        "pulselaser": {
+          "gun": "pulselaser-gun",
+          "gain": 0.8,
+          "range": 700
+        },
+        "rockets": {
+          "gun": "rockets-gun",
+          "gain": 0.9,
+          "range": 1000
+        },
+        "heavyrockets": {
+          "gun": "heavyrockets-gun",
+          "gain": 1,
+          "range": 1200
+        },
+        "missiles": {
+          "gun": "missiles-gun",
+          "gain": 0.9,
+          "range": 1000
+        },
+        "grenades": {
+          "gun": "grenades-gun",
+          "gain": 0.9,
+          "range": 700
+        },
+        "ggm": {
+          "gun": "vls-gun",
+          "gain": 1,
+          "range": 1400
+        },
+        "lgm": {
+          "gun": "vls-gun",
+          "gain": 1,
+          "range": 1400
+        },
+        "blast": {
+          "gun": "blast-gun",
+          "gain": 1,
+          "range": 1500
+        },
+        "bigblast": {
+          "gun": "bigblast-gun",
+          "gain": 1,
+          "range": 2000
+        },
+        "shellhit": {
+          "gun": "shellhit-gun",
+          "gain": 1,
+          "range": 1200
+        },
+        "dirt": {
+          "sounds": [
+            "dirt-1",
+            "dirt-2",
+            "dirt-3",
+            "dirt-4",
+            "dirt-5",
+            "dirt-6"
+          ],
+          "gain": 0.55,
+          "rate": [
+            0.9,
+            1.1
+          ],
+          "range": 200
+        },
+        "scorch": {
+          "sounds": [
+            "scorch-1",
+            "scorch-2",
+            "scorch-3",
+            "scorch-4"
+          ],
+          "gain": 0.6,
+          "rate": [
+            0.92,
+            1.08
+          ],
+          "range": 250
+        },
+        "beam-on": {
+          "sounds": [
+            "beam-on-1",
+            "beam-on-2"
+          ],
+          "gain": 0.8,
+          "range": 400
+        },
+        "beam-off": {
+          "sounds": [
+            "beam-off-1",
+            "beam-off-2"
+          ],
+          "gain": 0.7,
+          "range": 400
+        }
+      },
+      "held": {
+        "beam-hum": {
+          "kind": "gun",
+          "field": "on",
+          "sound": "beam-hum",
+          "over": [
+            0,
+            1
+          ],
+          "gain": [
+            0,
+            0.6
+          ],
+          "range": 300
+        },
+        "chaingun-motor": {
+          "kind": "gun",
+          "field": "spin",
+          "sound": "chaingun-motor",
+          "over": [
+            0,
+            1
+          ],
+          "gain": [
+            0,
+            0.45
+          ],
+          "rate": [
+            0.3,
+            1
+          ],
+          "range": 200
+        }
+      }
+    },
+    "ui": {
+      "panels": {
+        "caption": {
+          "anchor": "top-left",
+          "at": [
+            16,
+            16
+          ],
+          "size": [
+            560,
+            140
+          ],
+          "layer": 0
+        }
+      },
+      "keys": {
+        "up": "ArrowUp",
+        "down": "ArrowDown",
+        "left": "ArrowLeft",
+        "right": "ArrowRight",
+        "press": [
+          "Enter"
+        ],
+        "back": "Escape"
+      },
+      "styles": {
+        "caption.title": {
+          "fontFamily": "monospace",
+          "fontSize": 22,
+          "fontWeight": "bold",
+          "fill": 16765562,
+          "stroke": {
+            "color": 0,
+            "width": 4,
+            "join": "round"
+          }
+        },
+        "caption.text": {
+          "fontFamily": "monospace",
+          "fontSize": 14,
+          "fill": 15658734,
+          "stroke": {
+            "color": 0,
+            "width": 3,
+            "join": "round"
+          }
+        },
+        "caption.keys": {
+          "fontFamily": "monospace",
+          "fontSize": 13,
+          "fill": 11184810,
+          "stroke": {
+            "color": 0,
+            "width": 3,
+            "join": "round"
+          }
+        }
+      }
+    },
+    "shipped": {
+      "plugins": [
+        "flat"
+      ]
+    },
+    "hitscan3d": {
+      "mods": {
+        "ground": "flat"
+      },
+      "rewind": 30,
+      "kinds": {}
+    },
+    "volley3d": {
+      "patterns": "volleys",
+      "hold": 0.5,
+      "mods": {
+        "shoot": "hitscan3d",
+        "bodies": "hitscan3d"
+      }
+    },
+    "particle3d": {
+      "effects": "effects"
+    }
+  },
+  "plugins": [
+    "loader",
+    "scenemanager",
+    "shipped",
+    "player",
+    "box3d",
+    "box3dvehicle",
+    "solids",
+    "volley3d",
+    "particle3d",
+    "render3d",
+    "environment3d",
+    "audio",
+    "ui"
+  ],
+  "seats": 2,
+  "prefabs": {
+    "engine": {
+      "dt": 0.016666666666666666,
+      "width": 1280,
+      "height": 720
+    },
+    "scenemanager": {
+      "out": {}
+    },
+    "loader": {},
+    "render3d": {
+      "camera": {
+        "at": [
+          -14,
+          5,
+          0
+        ],
+        "look": [
+          0,
+          1,
+          0
+        ],
+        "fov": 60,
+        "near": 0.1,
+        "far": 600
+      },
+      "background": "#9ec3e6",
+      "bloom": {
+        "strength": 0.35,
+        "radius": 0.25,
+        "threshold": 1
+      }
+    },
+    "environment3d": {
+      "sun": {
+        "at": [
+          30,
+          60,
+          20
+        ],
+        "color": "#fff4e0",
+        "power": 2.4
+      },
+      "sky": {
+        "color": "#cfe3ff",
+        "ground": "#3a3f33",
+        "power": 1.1
+      },
+      "floor": {
+        "size": 800,
+        "color": "#5a5f55"
+      }
+    },
+    "box3d": {},
+    "box3dvehicle": {
+      "throttle": 0,
+      "brake": 0,
+      "steer": 0,
+      "gear": 1,
+      "rpm": 0,
+      "torque": 0
+    },
+    "car": {
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "vel": [
+        0,
+        0,
+        0
+      ],
+      "spin": [
+        0,
+        0,
+        0
+      ],
+      "awake": true
+    },
+    "wheel": {
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "vel": [
+        0,
+        0,
+        0
+      ],
+      "spin": [
+        0,
+        0,
+        0
+      ],
+      "awake": true
+    },
+    "axle": {},
+    "player": {
+      "seat": 0,
+      "held": null,
+      "controls": {
+        "pedal": 0,
+        "steer": 0,
+        "brake": 0,
+        "fire": 0
+      }
+    },
+    "start": {
+      "slot": 0,
+      "spot": ""
+    },
+    "spot": {
+      "name": "",
+      "vehicle": "",
+      "x": 0,
+      "z": 0,
+      "yaw": 0,
+      "made": 0
+    },
+    "caption": {},
+    "audio": {
+      "step": 0,
+      "next": 1,
+      "live": []
+    },
+    "volley3d": {
+      "next": 1,
+      "live": []
+    },
+    "gun": {
+      "gun": "",
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "yaw": 0,
+      "turn": 0,
+      "reach": 60,
+      "steer": 0,
+      "pedal": 0,
+      "held": false,
+      "cool": 0,
+      "fired": 0,
+      "shot": null,
+      "mark": null,
+      "spin": 0,
+      "on": false
+    }
+  },
+  "actors": [
+    {
+      "is": "scenemanager"
+    },
+    {
+      "is": "loader"
+    },
+    {
+      "is": "audio"
+    },
+    {
+      "is": "volley3d"
+    },
+    {
+      "is": "box3d"
+    },
+    {
+      "is": "caption"
+    },
+    {
+      "is": "spot",
+      "name": "kart",
+      "vehicle": "kart",
+      "x": 0,
+      "z": -24.5,
+      "yaw": 0
+    },
+    {
+      "is": "spot",
+      "name": "hatch",
+      "vehicle": "hatch",
+      "x": 0,
+      "z": -17.5,
+      "yaw": 0
+    },
+    {
+      "is": "spot",
+      "name": "muscle",
+      "vehicle": "muscle",
+      "x": 0,
+      "z": -10.5,
+      "yaw": 0
+    },
+    {
+      "is": "spot",
+      "name": "exotic",
+      "vehicle": "exotic",
+      "x": 0,
+      "z": -3.5,
+      "yaw": 0
+    },
+    {
+      "is": "spot",
+      "name": "grand",
+      "vehicle": "grand",
+      "x": 0,
+      "z": 3.5,
+      "yaw": 0
+    },
+    {
+      "is": "spot",
+      "name": "truck",
+      "vehicle": "truck",
+      "x": 0,
+      "z": 10.5,
+      "yaw": 0
+    },
+    {
+      "is": "spot",
+      "name": "pickup",
+      "vehicle": "pickup",
+      "x": 0,
+      "z": 17.5,
+      "yaw": 0
+    },
+    {
+      "is": "spot",
+      "name": "cart",
+      "vehicle": "cart",
+      "x": 0,
+      "z": 24.5,
+      "yaw": 0
+    },
+    {
+      "is": "start",
+      "slot": 0,
+      "spot": "hatch"
+    },
+    {
+      "is": "start",
+      "slot": 1,
+      "spot": "muscle"
+    },
+    {
+      "is": "gun",
+      "gun": "chaingun",
+      "pos": [
+        -30,
+        0,
+        -33
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "twinmg",
+      "pos": [
+        -30,
+        0,
+        -27
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "pd",
+      "pos": [
+        -30,
+        0,
+        -21
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "autocannon",
+      "pos": [
+        -30,
+        0,
+        -15
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "pulselaser",
+      "pos": [
+        -30,
+        0,
+        -9
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "beamlaser",
+      "pos": [
+        -30,
+        0,
+        -3
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "rockets",
+      "pos": [
+        -30,
+        0,
+        3
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "heavyrockets",
+      "pos": [
+        -30,
+        0,
+        9
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "missiles",
+      "pos": [
+        -30,
+        0,
+        15
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "grenades",
+      "pos": [
+        -30,
+        0,
+        21
+      ],
+      "yaw": -1.5707963267948966
+    },
+    {
+      "is": "gun",
+      "gun": "ggm",
+      "pos": [
+        -30,
+        0,
+        27
+      ],
+      "yaw": -1.5707963267948966,
+      "reach": 250
+    },
+    {
+      "is": "gun",
+      "gun": "lgm",
+      "pos": [
+        -30,
+        0,
+        33
+      ],
+      "yaw": -1.5707963267948966,
+      "reach": 250
+    }
+  ]
+}

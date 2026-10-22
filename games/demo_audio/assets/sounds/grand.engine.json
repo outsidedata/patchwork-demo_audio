@@ -1,0 +1,80 @@
+{
+  "order": 6,
+  "mix": {
+    "stems": {
+      "on": [
+        0.25,
+        1
+      ],
+      "off": [
+        0.9,
+        0
+      ],
+      "intake": [
+        0.25,
+        0.7
+      ],
+      "mech": [
+        0.35,
+        0.35
+      ]
+    },
+    "ease": 0.06
+  },
+  "layers": [
+    {
+      "rpm": 900,
+      "stems": {
+        "on": "grand-900-on.wav",
+        "off": "grand-900-off.wav",
+        "intake": "grand-900-intake.wav",
+        "mech": "grand-900-mech.wav"
+      }
+    },
+    {
+      "rpm": 1500,
+      "stems": {
+        "on": "grand-1500-on.wav",
+        "off": "grand-1500-off.wav",
+        "intake": "grand-1500-intake.wav",
+        "mech": "grand-1500-mech.wav"
+      }
+    },
+    {
+      "rpm": 2500,
+      "stems": {
+        "on": "grand-2500-on.wav",
+        "off": "grand-2500-off.wav",
+        "intake": "grand-2500-intake.wav",
+        "mech": "grand-2500-mech.wav"
+      }
+    },
+    {
+      "rpm": 3900,
+      "stems": {
+        "on": "grand-3900-on.wav",
+        "off": "grand-3900-off.wav",
+        "intake": "grand-3900-intake.wav",
+        "mech": "grand-3900-mech.wav"
+      }
+    },
+    {
+      "rpm": 5900,
+      "stems": {
+        "on": "grand-5900-on.wav",
+        "off": "grand-5900-off.wav",
+        "intake": "grand-5900-intake.wav",
+        "mech": "grand-5900-mech.wav"
+      }
+    },
+    {
+      "rpm": 8500,
+      "stems": {
+        "on": "grand-8500-on.wav",
+        "off": "grand-8500-off.wav",
+        "intake": "grand-8500-intake.wav",
+        "mech": "grand-8500-mech.wav"
+      }
+    }
+  ]
+}

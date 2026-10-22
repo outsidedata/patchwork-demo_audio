@@ -1,0 +1,80 @@
+{
+  "order": 4,
+  "mix": {
+    "stems": {
+      "on": [
+        0.3,
+        1
+      ],
+      "off": [
+        1,
+        0.1
+      ],
+      "intake": [
+        0.15,
+        0.6
+      ],
+      "mech": [
+        0.35,
+        0.35
+      ]
+    },
+    "ease": 0.1
+  },
+  "layers": [
+    {
+      "rpm": 700,
+      "stems": {
+        "on": "muscle-700-on.wav",
+        "off": "muscle-700-off.wav",
+        "intake": "muscle-700-intake.wav",
+        "mech": "muscle-700-mech.wav"
+      }
+    },
+    {
+      "rpm": 1200,
+      "stems": {
+        "on": "muscle-1200-on.wav",
+        "off": "muscle-1200-off.wav",
+        "intake": "muscle-1200-intake.wav",
+        "mech": "muscle-1200-mech.wav"
+      }
+    },
+    {
+      "rpm": 2000,
+      "stems": {
+        "on": "muscle-2000-on.wav",
+        "off": "muscle-2000-off.wav",
+        "intake": "muscle-2000-intake.wav",
+        "mech": "muscle-2000-mech.wav"
+      }
+    },
+    {
+      "rpm": 3000,
+      "stems": {
+        "on": "muscle-3000-on.wav",
+        "off": "muscle-3000-off.wav",
+        "intake": "muscle-3000-intake.wav",
+        "mech": "muscle-3000-mech.wav"
+      }
+    },
+    {
+      "rpm": 4400,
+      "stems": {
+        "on": "muscle-4400-on.wav",
+        "off": "muscle-4400-off.wav",
+        "intake": "muscle-4400-intake.wav",
+        "mech": "muscle-4400-mech.wav"
+      }
+    },
+    {
+      "rpm": 6200,
+      "stems": {
+        "on": "muscle-6200-on.wav",
+        "off": "muscle-6200-off.wav",
+        "intake": "muscle-6200-intake.wav",
+        "mech": "muscle-6200-mech.wav"
+      }
+    }
+  ]
+}

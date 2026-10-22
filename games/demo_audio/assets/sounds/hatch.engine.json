@@ -1,0 +1,80 @@
+{
+  "order": 2,
+  "mix": {
+    "stems": {
+      "on": [
+        0.25,
+        1
+      ],
+      "off": [
+        1,
+        0
+      ],
+      "intake": [
+        0.2,
+        0.6
+      ],
+      "mech": [
+        0.4,
+        0.4
+      ]
+    },
+    "ease": 0.08
+  },
+  "layers": [
+    {
+      "rpm": 850,
+      "stems": {
+        "on": "hatch-850-on.wav",
+        "off": "hatch-850-off.wav",
+        "intake": "hatch-850-intake.wav",
+        "mech": "hatch-850-mech.wav"
+      }
+    },
+    {
+      "rpm": 1400,
+      "stems": {
+        "on": "hatch-1400-on.wav",
+        "off": "hatch-1400-off.wav",
+        "intake": "hatch-1400-intake.wav",
+        "mech": "hatch-1400-mech.wav"
+      }
+    },
+    {
+      "rpm": 2200,
+      "stems": {
+        "on": "hatch-2200-on.wav",
+        "off": "hatch-2200-off.wav",
+        "intake": "hatch-2200-intake.wav",
+        "mech": "hatch-2200-mech.wav"
+      }
+    },
+    {
+      "rpm": 3300,
+      "stems": {
+        "on": "hatch-3300-on.wav",
+        "off": "hatch-3300-off.wav",
+        "intake": "hatch-3300-intake.wav",
+        "mech": "hatch-3300-mech.wav"
+      }
+    },
+    {
+      "rpm": 4800,
+      "stems": {
+        "on": "hatch-4800-on.wav",
+        "off": "hatch-4800-off.wav",
+        "intake": "hatch-4800-intake.wav",
+        "mech": "hatch-4800-mech.wav"
+      }
+    },
+    {
+      "rpm": 6500,
+      "stems": {
+        "on": "hatch-6500-on.wav",
+        "off": "hatch-6500-off.wav",
+        "intake": "hatch-6500-intake.wav",
+        "mech": "hatch-6500-mech.wav"
+      }
+    }
+  ]
+}

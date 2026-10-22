@@ -1,0 +1,152 @@
+{
+  "car": {
+    "spawnLift": 0.13
+  },
+  "player": {
+    "camera": { "back": 7, "high": 2.8, "aim": 1.2, "followHz": 4, "riseHz": 1.5, "turnHz": 1 },
+    "gun": { "back": 3.6, "high": 0.9, "side": 1.3, "aim": 0.6, "ahead": 30, "followHz": 4, "riseHz": 3, "turnHz": 3 }
+  },
+  "gun": {
+    "slew": 30,
+    "turn": 40,
+    "reach": [12, 400],
+    "plinth": { "model": "plinth-model", "top": 1.1 },
+    "guns": {
+      "chaingun": {
+        "name": "Chaingun", "model": "chaingun-model", "lay": "side", "pad": 0.18,
+        "rule": "gun", "rpm": 3000, "damage": 4, "range": 400, "spread": 1.5,
+        "spin": { "up": 0.45, "down": 1.6, "fire": 0.55 },
+        "sounds": { "fire": "chaingun", "hit": "dirt" },
+        "look": {
+          "flash": "muzzle", "line": "tracer", "impact": { "ground": "dirt", "solid": "chips" }, "smoke": "smolder", "smolder": 1.6,
+          "light": { "colour": "#ffb35c", "power": 14, "distance": 14, "fade": 0.03 },
+          "kick": [0.025, 0.03], "spin": 40,
+          "eject": { "at": [0.35, 0.17, -0.05], "dir": [0.45, 1, -0.25], "speed": 4.5, "spread": 0.3, "size": [0.014, 0.1], "spin": 30 }
+        }
+      },
+      "twinmg": {
+        "name": "Twin MG", "model": "twinmg-model", "lay": "side", "pad": 0.18,
+        "rule": "gun", "rpm": 1600, "damage": 3, "range": 500, "spread": 1,
+        "sounds": { "fire": "twinmg", "hit": "dirt" },
+        "look": {
+          "flash": "muzzle-small", "line": "tracer", "impact": { "ground": "dirt", "solid": "chips" }, "smoke": "smolder", "smolder": 1.2,
+          "light": { "colour": "#ffb35c", "power": 10, "distance": 10, "fade": 0.025 },
+          "kick": [0.018, 0.03],
+          "eject": { "at": [0.36, 0.2, 0.05], "dir": [0.5, 1, -0.2], "speed": 4, "spread": 0.3, "size": [0.009, 0.065], "spin": 35 }
+        }
+      },
+      "pd": {
+        "name": "Point defense", "model": "pd-model", "lay": "top", "pad": 0.12,
+        "rule": "gun", "rpm": 150, "damage": 6, "range": 80, "spread": 0.5,
+        "sounds": { "fire": "pd", "hit": "dirt" },
+        "look": {
+          "flash": "muzzle", "line": "tracer", "impact": { "ground": "dirt", "solid": "chips" }, "smoke": "smolder", "smolder": 1.2,
+          "light": { "colour": "#ffb35c", "power": 12, "distance": 12, "fade": 0.03 },
+          "kick": [0.03, 0.04],
+          "eject": { "at": [0.08, 0.33, 0.12], "dir": [1, 0.6, -0.3], "speed": 4, "spread": 0.3, "size": [0.012, 0.09], "spin": 30 }
+        }
+      },
+      "autocannon": {
+        "name": "Autocannon", "model": "autocannon-model", "lay": "side", "pad": 0.18,
+        "rule": "launcher", "rpm": 240, "damage": 45, "pattern": "shell",
+        "sounds": { "fire": "autocannon", "burst": "shellhit" },
+        "look": {
+          "flash": "cannon", "smoke": "smolder", "smolder": 2.2,
+          "light": { "colour": "#ffae52", "power": 30, "distance": 20, "fade": 0.045 },
+          "kick": [0.09, 0.07],
+          "eject": { "at": [0.35, 0.22, -0.1], "dir": [0.5, 1, -0.35], "speed": 3.5, "spread": 0.25, "size": [0.024, 0.17], "spin": 18 }
+        }
+      },
+      "pulselaser": {
+        "name": "Pulse laser", "model": "pulselaser-model", "lay": "side", "pad": 0.18,
+        "rule": "pulse", "rpm": 240, "damage": 25, "range": 700,
+        "sounds": { "fire": "pulselaser", "hit": "scorch" },
+        "look": {
+          "flash": "pulse", "line": "bolt", "impact": { "ground": "scorch", "solid": "scorch" },
+          "light": { "colour": "#5cff8a", "power": 12, "distance": 12, "fade": 0.06 },
+          "kick": [0.012, 0.05]
+        }
+      },
+      "beamlaser": {
+        "name": "Beam laser", "model": "beamlaser-model", "lay": "side", "pad": 0.18,
+        "rule": "beam", "range": 1500,
+        "sounds": { "on": "beam-on", "off": "beam-off" },
+        "look": {
+          "line": "beam", "spot": "burn",
+          "light": { "colour": "#ff4a2a", "power": 8, "distance": 12, "fade": 0.05 }, "flicker": 0.35
+        }
+      },
+      "rockets": {
+        "name": "Rockets", "model": "rockets-model", "lay": "side", "pad": 0.18,
+        "rule": "launcher", "rpm": 240, "damage": 70, "pattern": "rocket",
+        "sounds": { "fire": "rockets", "burst": "blast" },
+        "look": { "flash": "launch", "smoke": "smolder", "smolder": 1.5, "light": { "colour": "#ffc070", "power": 22, "distance": 16, "fade": 0.08 }, "kick": [0.02, 0.06] }
+      },
+      "heavyrockets": {
+        "name": "Heavy rockets", "model": "heavyrockets-model", "lay": "side", "pad": 0.18,
+        "rule": "launcher", "rpm": 180, "damage": 120, "pattern": "heavyrocket",
+        "sounds": { "fire": "heavyrockets", "burst": "bigblast" },
+        "look": { "flash": "launch", "smoke": "smolder", "smolder": 2, "light": { "colour": "#ffc070", "power": 30, "distance": 18, "fade": 0.1 }, "kick": [0.035, 0.08] }
+      },
+      "missiles": {
+        "name": "Missiles", "model": "missiles-model", "lay": "side", "pad": 0.18,
+        "rule": "launcher", "rpm": 60, "damage": 150, "pattern": "missile",
+        "sounds": { "fire": "missiles", "burst": "blast" },
+        "look": { "flash": "launch", "smoke": "smolder", "smolder": 1.5, "light": { "colour": "#dff0ff", "power": 18, "distance": 14, "fade": 0.1 }, "kick": [0.015, 0.06] }
+      },
+      "grenades": {
+        "name": "Grenades", "model": "grenades-model", "lay": "side", "pad": 0.18,
+        "rule": "launcher", "rpm": 60, "damage": 90, "pattern": "grenade",
+        "sounds": { "fire": "grenades", "burst": "blast" },
+        "look": {
+          "flash": "launch", "smoke": "smolder", "smolder": 1.4, "light": { "colour": "#ffb35c", "power": 12, "distance": 10, "fade": 0.05 }, "kick": [0.04, 0.07],
+          "eject": { "at": [0.36, 0.15, -0.1], "dir": [0.4, 1, -0.4], "speed": 2.5, "spread": 0.25, "size": [0.02, 0.07], "spin": 14 }
+        }
+      },
+      "ggm": {
+        "name": "GGM", "model": "ggm-model", "lay": "top", "pad": 0.12,
+        "rule": "launcher", "rpm": 40, "damage": 180, "pattern": "ggm", "launch": "up",
+        "sounds": { "fire": "ggm", "burst": "bigblast" },
+        "look": { "flash": "launch", "smoke": "smolder", "smolder": 2.5, "light": { "colour": "#ffd08a", "power": 40, "distance": 22, "fade": 0.15 }, "kick": [0.02, 0.1] }
+      },
+      "lgm": {
+        "name": "LGM", "model": "lgm-model", "lay": "top", "pad": 0.12,
+        "rule": "launcher", "rpm": 40, "damage": 220, "pattern": "ggm", "launch": "up",
+        "sounds": { "fire": "lgm", "burst": "bigblast" },
+        "look": { "flash": "launch", "smoke": "smolder", "smolder": 2.5, "light": { "colour": "#ffd08a", "power": 40, "distance": 22, "fade": 0.15 }, "kick": [0.02, 0.1] }
+      }
+    }
+  },
+  "caption": {
+    "title": [0, 0],
+    "lines": [0, 34],
+    "line": 20,
+    "keys": [0, 100],
+    "help": "w/s or triggers: pedal   a/d: steer   space: brake   v/tab: next car   c: car before",
+    "shoot": "f or click: fire   a/d: turn   w/s: aim further, nearer   v/tab: next   c: before",
+    "cars": {
+      "kart": { "name": "Kart", "engine": "125 cc two-stroke single" },
+      "hatch": { "name": "Hatch", "engine": "inline four" },
+      "muscle": { "name": "Muscle car", "engine": "cross-plane V8" },
+      "exotic": { "name": "Exotic", "engine": "flat-plane V8" },
+      "grand": { "name": "Grand tourer", "engine": "60° V12" },
+      "truck": { "name": "Truck", "engine": "straight-six diesel" },
+      "pickup": { "name": "Pickup", "engine": "V8 diesel" },
+      "cart": { "name": "Golf cart", "engine": "electric motor" }
+    },
+    "guns": {
+      "chaingun": "six-barrel rotary cannon, 3000 rounds a minute once spun up",
+      "twinmg": "twin machine guns, 1600 rounds a minute",
+      "pd": "point-defense cannon, 150 rounds a minute",
+      "autocannon": "autocannon, 240 shells a minute",
+      "pulselaser": "pulse laser, 240 bolts a minute",
+      "beamlaser": "beam laser, held on",
+      "rockets": "rocket pod, 240 rockets a minute",
+      "heavyrockets": "heavy rocket pod, 180 a minute",
+      "missiles": "missile rack, 60 a minute",
+      "grenades": "grenade launcher, 60 a minute",
+      "ggm": "vertical-launch guided missiles, 40 a minute",
+      "lgm": "vertical-launch laser-guided missiles, 40 a minute"
+    }
+  }
+}

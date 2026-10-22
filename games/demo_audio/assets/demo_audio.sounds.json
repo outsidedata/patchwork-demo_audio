@@ -1,0 +1,33 @@
+{
+  "rate": 48000,
+  "seed": 1,
+  "sounds": {
+    "kart": { "species": "two-stroke-single" },
+    "hatch": { "species": "inline-four" },
+    "muscle": { "species": "v8-crossplane" },
+    "exotic": { "species": "v8-flatplane" },
+    "grand": { "species": "v12" },
+    "truck": { "species": "straight-six-diesel" },
+    "pickup": { "species": "v8-diesel" },
+    "cart": { "species": "electric-motor" },
+    "chaingun": { "species": "rotary-cannon" },
+    "chaingun-motor": { "species": "rotary-motor" },
+    "twinmg": { "species": "machine-gun" },
+    "pd": { "species": "point-defense" },
+    "autocannon": { "species": "autocannon" },
+    "pulselaser": { "species": "pulse-laser" },
+    "beam-hum": { "species": "beam-hum" },
+    "beam-on": { "species": "beam-on" },
+    "beam-off": { "species": "beam-off" },
+    "rockets": { "species": "rocket-launch" },
+    "heavyrockets": { "species": "heavy-rocket-launch" },
+    "missiles": { "species": "missile-launch" },
+    "grenades": { "species": "grenade-launcher" },
+    "vls": { "species": "vertical-launch" },
+    "blast": { "species": "blast" },
+    "bigblast": { "species": "big-blast" },
+    "shellhit": { "species": "shell-hit" },
+    "dirt": { "species": "bullet-dirt" },
+    "scorch": { "species": "plasma-hit" }
+  }
+}

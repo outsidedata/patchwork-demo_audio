@@ -1,0 +1,80 @@
+{
+  "order": 3,
+  "mix": {
+    "stems": {
+      "on": [
+        0.3,
+        1
+      ],
+      "off": [
+        1,
+        0
+      ],
+      "intake": [
+        0.2,
+        0.7
+      ],
+      "mech": [
+        0.5,
+        0.6
+      ]
+    },
+    "ease": 0.12
+  },
+  "layers": [
+    {
+      "rpm": 800,
+      "stems": {
+        "on": "truck-800-on.wav",
+        "off": "truck-800-off.wav",
+        "intake": "truck-800-intake.wav",
+        "mech": "truck-800-mech.wav"
+      }
+    },
+    {
+      "rpm": 1300,
+      "stems": {
+        "on": "truck-1300-on.wav",
+        "off": "truck-1300-off.wav",
+        "intake": "truck-1300-intake.wav",
+        "mech": "truck-1300-mech.wav"
+      }
+    },
+    {
+      "rpm": 2000,
+      "stems": {
+        "on": "truck-2000-on.wav",
+        "off": "truck-2000-off.wav",
+        "intake": "truck-2000-intake.wav",
+        "mech": "truck-2000-mech.wav"
+      }
+    },
+    {
+      "rpm": 3000,
+      "stems": {
+        "on": "truck-3000-on.wav",
+        "off": "truck-3000-off.wav",
+        "intake": "truck-3000-intake.wav",
+        "mech": "truck-3000-mech.wav"
+      }
+    },
+    {
+      "rpm": 4200,
+      "stems": {
+        "on": "truck-4200-on.wav",
+        "off": "truck-4200-off.wav",
+        "intake": "truck-4200-intake.wav",
+        "mech": "truck-4200-mech.wav"
+      }
+    },
+    {
+      "rpm": 5500,
+      "stems": {
+        "on": "truck-5500-on.wav",
+        "off": "truck-5500-off.wav",
+        "intake": "truck-5500-intake.wav",
+        "mech": "truck-5500-mech.wav"
+      }
+    }
+  ]
+}

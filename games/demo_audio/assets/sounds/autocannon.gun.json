@@ -1,0 +1,62 @@
+{
+  "mix": {
+    "near": 5,
+    "far": 400,
+    "choke": [
+      "far",
+      "tail"
+    ],
+    "stems": {
+      "crack": [
+        1,
+        0.15
+      ],
+      "body": [
+        1,
+        0.45
+      ],
+      "mech": [
+        0.7,
+        0
+      ],
+      "far": [
+        0.12,
+        1
+      ],
+      "tail": [
+        0.5,
+        0.95
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "autocannon-1-crack.wav",
+      "body": "autocannon-1-body.wav",
+      "mech": "autocannon-1-mech.wav",
+      "far": "autocannon-1-far.wav",
+      "tail": "autocannon-1-tail.wav"
+    },
+    {
+      "crack": "autocannon-2-crack.wav",
+      "body": "autocannon-2-body.wav",
+      "mech": "autocannon-2-mech.wav",
+      "far": "autocannon-2-far.wav",
+      "tail": "autocannon-2-tail.wav"
+    },
+    {
+      "crack": "autocannon-3-crack.wav",
+      "body": "autocannon-3-body.wav",
+      "mech": "autocannon-3-mech.wav",
+      "far": "autocannon-3-far.wav",
+      "tail": "autocannon-3-tail.wav"
+    },
+    {
+      "crack": "autocannon-4-crack.wav",
+      "body": "autocannon-4-body.wav",
+      "mech": "autocannon-4-mech.wav",
+      "far": "autocannon-4-far.wav",
+      "tail": "autocannon-4-tail.wav"
+    }
+  ]
+}

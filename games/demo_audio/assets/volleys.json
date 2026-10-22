@@ -1,0 +1,10 @@
+{
+  "patterns": {
+    "shell": { "speed": 320, "g": 9.8, "life": 3, "radius": 0.15, "look": { "body": "shell", "trail": "shelltrail", "burst": "shellhit" } },
+    "heavyrocket": { "speed": 30, "accel": 120, "max": 160, "life": 4, "radius": 0.3, "splash": 6, "look": { "body": "rocket", "trail": "smoke", "burst": "bigblast" } },
+    "rocket": { "speed": 40, "accel": 150, "max": 220, "life": 3.5, "radius": 0.2, "splash": 4, "look": { "body": "rocket", "trail": "smoke", "burst": "blast" } },
+    "ggm": { "speed": 25, "accel": 60, "max": 140, "life": 14, "radius": 0.4, "splash": 7, "seek": 1.2, "look": { "body": "missile", "trail": "missiletrail", "burst": "bigblast" } },
+    "missile": { "speed": 18, "accel": 80, "max": 120, "life": 7, "radius": 0.3, "splash": 4, "seek": 2.8, "look": { "body": "missile", "trail": "missiletrail", "burst": "blast" } },
+    "grenade": { "speed": 45, "g": 9.8, "life": 5, "radius": 0.25, "splash": 6, "look": { "body": "grenade", "trail": "grenadetrail", "burst": "bigblast" } }
+  }
+}

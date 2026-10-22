@@ -1,0 +1,59 @@
+{
+  "mix": {
+    "near": 4,
+    "far": 220,
+    "choke": [],
+    "stems": {
+      "crack": [
+        0.6,
+        0.05
+      ],
+      "body": [
+        1,
+        0.35
+      ],
+      "mech": [
+        0.8,
+        0
+      ],
+      "far": [
+        0.1,
+        1
+      ],
+      "tail": [
+        0.4,
+        0.8
+      ]
+    }
+  },
+  "variants": [
+    {
+      "crack": "grenades-1-crack.wav",
+      "body": "grenades-1-body.wav",
+      "mech": "grenades-1-mech.wav",
+      "far": "grenades-1-far.wav",
+      "tail": "grenades-1-tail.wav"
+    },
+    {
+      "crack": "grenades-2-crack.wav",
+      "body": "grenades-2-body.wav",
+      "mech": "grenades-2-mech.wav",
+      "far": "grenades-2-far.wav",
+      "tail": "grenades-2-tail.wav"
+    },
+    {
+      "crack": "grenades-3-crack.wav",
+      "body": "grenades-3-body.wav",
+      "mech": "grenades-3-mech.wav",
+      "far": "grenades-3-far.wav",
+      "tail": "grenades-3-tail.wav"
+    },
+    {
+      "crack": "grenades-4-crack.wav",
+      "body": "grenades-4-body.wav",
+      "mech": "grenades-4-mech.wav",
+      "far": "grenades-4-far.wav",
+      "tail": "grenades-4-tail.wav"
+    }
+  ]
+}
