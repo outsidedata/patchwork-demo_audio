@@ -20,7 +20,8 @@
 // its plinth's `yaw`, within the definition's `turn`; `reach` the metres along the ground to the
 // point it aims at, within `reach`; `steer` and `pedal`, the last of each a seat sent; `cool` the
 // seconds until it may fire again; `fired` the rounds it has fired; `shot` the last round's line,
-// `{ from, to, what }`, what being where it met the ground, or null in the air; `mark` the aim point
+// `{ from, to, what }`, what being what it met, hitscan3d's `what` (`solid` for the lot's floor), or
+// null in the air; `mark` the aim point
 // [x, y, z]; `spin`; and `on`, a beam's. The rounds of a step leave each a share of the step after
 // the last, the pause left over carried from round to round, so a steady trigger fires at `rpm`
 // whatever the step.

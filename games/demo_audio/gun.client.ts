@@ -10,7 +10,8 @@
 // Each frame, for a gun whose `fired` has gone up since the frame before, the rounds it fired since:
 //   flash     `look.flash` at the muzzle, thrown along the way the last round went, once a frame;
 //   line      for a gun or a pulse laser, `look.line` from the muzzle to each round's end (a tracer, a
-//             bolt), and where the last met the ground `look.impact`, thrown back the way it came;
+//             bolt), and where the last met something `look.impact` of its `what`, thrown back the
+//             way it came;
 //   light     the muzzle's point light, `look.light` `{ colour, power, distance, fade }`, lit to `power`
 //             candela, falling by e every `fade` seconds;
 //   kick      the weapon thrown back along its barrel by `look.kick` `[metres, seconds]`, easing home

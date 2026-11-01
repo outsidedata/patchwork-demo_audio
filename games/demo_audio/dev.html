@@ -80,6 +80,7 @@
       import { sim } from './demo_audio.sim.ts'
       import file from './demo_audio.scene.json'
       import lot from './lot.scene.json'
+      file.prefabs.scenemanager.entry = new URLSearchParams(location.search).get('scene') ?? file.prefabs.scenemanager.entry
 
       const dt = file.prefabs.engine.dt
       // The gain that connects straight to a context's destination is audio's volume, the last node
@@ -91,7 +92,7 @@
         return connect.call(this, to, ...rest)
       }
       const truth = boot(file, sim)
-      await load(truth, import.meta.url)
+      window.__scenes = await load(truth, import.meta.url)
       let client
       const page = view(link(loopback(accept(manager(truth)))), file, import.meta.url, (me, scene) => {
         client = me
@@ -103,7 +104,9 @@
           document.body.appendChild(canvas)
           surface.mount(canvas)
         }
+        me.plugins.stats?.mount(document.body)
       })
+      window.__page = page
       window.dev = { page, truth, get client() { return client } }
 
       const fleet = () => client.plugins.wire.scene.world.box3dvehicle.vehicles

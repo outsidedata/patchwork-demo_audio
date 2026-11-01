@@ -179,7 +179,7 @@ test('a beam is on while its trigger is held, its line from its muzzle to the gr
   t.steps(30)
   expect(gun.data.on).toBe(true)
   const aim = gun.data.mark as number[]
-  expect(gun.data.shot.what).toBe('ground')
+  expect(gun.data.shot.what).toBe('solid')
   expect(Math.hypot(gun.data.shot.to[0] - aim[0], gun.data.shot.to[1], gun.data.shot.to[2] - aim[2])).toBeLessThan(1e-6)
   t.press(0, 'fire', 0)
   t.steps(5)

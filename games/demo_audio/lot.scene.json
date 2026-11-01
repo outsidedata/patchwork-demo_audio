@@ -321,41 +321,40 @@
       "enableSleep": true,
       "enableContinuous": true,
       "enableWarmStarting": false,
-      "static": [
-        {
-          "pos": [
-            0,
-            -1,
-            0
-          ],
-          "rot": [
-            0,
-            0,
-            0,
-            1
-          ],
-          "shapes": [
-            {
-              "box": [
-                400,
-                1,
-                400
-              ],
-              "density": 0,
-              "baseMaterial": {
-                "friction": 0.9,
-                "restitution": 0,
-                "rollingResistance": 0
-              }
-            }
-          ]
-        }
-      ],
+      "static": [],
       "kinds": {},
       "mods": {
         "kinds": [
           "box3dvehicle"
+        ],
+        "fixed": [
+          "shapes3d"
         ]
+      }
+    },
+    "shapes3d": {
+      "kinds": {
+        "floor": {
+          "shape": {
+            "box": {
+              "size": [
+                800,
+                2,
+                800
+              ]
+            }
+          },
+          "surface": {
+            "friction": 0.9,
+            "restitution": 0,
+            "rollingResistance": 0
+          }
+        }
+      }
+    },
+    "solids": {
+      "mods": {
+        "models": "shapes3d"
       }
     },
     "box3dvehicle": {
@@ -626,36 +625,6 @@
               "overhang": 0.03,
               "round": 0.02,
               "bolts": 2
-            },
-            "lights": {
-              "radius": 0.05,
-              "depth": 0.03,
-              "bezel": 0.012,
-              "beam": {
-                "intensity": 60,
-                "distance": 40,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.06
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 2,
-                  "distance": 4,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 2,
-                  "distance": 6,
-                  "decay": 2
-                }
-              }
             },
             "open": {
               "windshield": {
@@ -985,41 +954,6 @@
               "height": 0.3,
               "depth": 0.06,
               "paint": "body"
-            },
-            "lights": {
-              "radius": 0.1,
-              "depth": 0.05,
-              "bezel": 0.025,
-              "beam": {
-                "intensity": 120,
-                "distance": 60,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.06
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 3,
-                  "distance": 6,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 3,
-                  "distance": 8,
-                  "decay": 2
-                }
-              },
-              "parking": {
-                "radius": 0.035,
-                "depth": 0.05,
-                "glow": 0.6
-              }
             },
             "spare": {
               "lift": 0.1
@@ -1379,41 +1313,6 @@
               "depth": 0.06,
               "paint": "body"
             },
-            "lights": {
-              "radius": 0.1,
-              "depth": 0.05,
-              "bezel": 0.025,
-              "beam": {
-                "intensity": 120,
-                "distance": 60,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.06
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 3,
-                  "distance": 6,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 3,
-                  "distance": 8,
-                  "decay": 2
-                }
-              },
-              "parking": {
-                "radius": 0.035,
-                "depth": 0.05,
-                "glow": 0.6
-              }
-            },
             "spare": {
               "lift": 0.1
             },
@@ -1769,41 +1668,6 @@
               "depth": 0.06,
               "paint": "body"
             },
-            "lights": {
-              "radius": 0.1,
-              "depth": 0.05,
-              "bezel": 0.025,
-              "beam": {
-                "intensity": 120,
-                "distance": 60,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.06
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 3,
-                  "distance": 6,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 3,
-                  "distance": 8,
-                  "decay": 2
-                }
-              },
-              "parking": {
-                "radius": 0.035,
-                "depth": 0.05,
-                "glow": 0.6
-              }
-            },
             "spare": {
               "lift": 0.1
             },
@@ -2158,41 +2022,6 @@
               "height": 0.3,
               "depth": 0.06,
               "paint": "body"
-            },
-            "lights": {
-              "radius": 0.1,
-              "depth": 0.05,
-              "bezel": 0.025,
-              "beam": {
-                "intensity": 120,
-                "distance": 60,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.06
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 3,
-                  "distance": 6,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 3,
-                  "distance": 8,
-                  "decay": 2
-                }
-              },
-              "parking": {
-                "radius": 0.035,
-                "depth": 0.05,
-                "glow": 0.6
-              }
             },
             "spare": {
               "lift": 0.1
@@ -2738,36 +2567,6 @@
                   ]
                 }
               ]
-            },
-            "lights": {
-              "radius": 0.16,
-              "depth": 0.08,
-              "bezel": 0.04,
-              "beam": {
-                "intensity": 200,
-                "distance": 80,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.05
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 5,
-                  "distance": 9,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 5,
-                  "distance": 12,
-                  "decay": 2
-                }
-              }
             }
           }
         },
@@ -3047,41 +2846,6 @@
               "height": 0.3,
               "depth": 0.06,
               "paint": "body"
-            },
-            "lights": {
-              "radius": 0.1,
-              "depth": 0.05,
-              "bezel": 0.025,
-              "beam": {
-                "intensity": 120,
-                "distance": 60,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.06
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 3,
-                  "distance": 6,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 3,
-                  "distance": 8,
-                  "decay": 2
-                }
-              },
-              "parking": {
-                "radius": 0.035,
-                "depth": 0.05,
-                "glow": 0.6
-              }
             },
             "spare": {
               "lift": 0.1
@@ -3380,36 +3144,6 @@
               "round": 0.02,
               "bolts": 2
             },
-            "lights": {
-              "radius": 0.05,
-              "depth": 0.03,
-              "bezel": 0.012,
-              "beam": {
-                "intensity": 60,
-                "distance": 40,
-                "decay": 2,
-                "angle": 0.45,
-                "penumbra": 0.5,
-                "dip": 0.06
-              },
-              "tail": {
-                "glow": 0.4,
-                "brake": 3,
-                "light": {
-                  "intensity": 2,
-                  "distance": 4,
-                  "decay": 2
-                }
-              },
-              "reverse": {
-                "glow": 2,
-                "light": {
-                  "intensity": 2,
-                  "distance": 6,
-                  "decay": 2
-                }
-              }
-            },
             "open": {
               "windshield": {
                 "height": 0.55,
@@ -3684,14 +3418,12 @@
         }
       }
     },
-    "shipped": {
-      "plugins": [
-        "flat"
-      ]
-    },
     "hitscan3d": {
       "mods": {
-        "ground": "flat"
+        "solids": [
+          "shapes3d"
+        ],
+        "behaviors": "shapes3d"
       },
       "rewind": 30,
       "kinds": {}
@@ -3711,7 +3443,6 @@
   "plugins": [
     "loader",
     "scenemanager",
-    "shipped",
     "player",
     "box3d",
     "box3dvehicle",
@@ -3721,7 +3452,8 @@
     "render3d",
     "environment3d",
     "audio",
-    "ui"
+    "ui",
+    "stats"
   ],
   "seats": 2,
   "prefabs": {
@@ -3835,6 +3567,14 @@
       "awake": true
     },
     "axle": {},
+    "floor": {
+      "pos": [
+        0,
+        0,
+        0
+      ],
+      "yaw": 0
+    },
     "player": {
       "seat": 0,
       "held": null,
@@ -3903,6 +3643,14 @@
     },
     {
       "is": "box3d"
+    },
+    {
+      "is": "floor",
+      "pos": [
+        0,
+        -2,
+        0
+      ]
     },
     {
       "is": "caption"
